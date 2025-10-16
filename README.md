@@ -1,73 +1,121 @@
-# Welcome to your Lovable project
+# Artisan Connect
 
-## Project info
+Plateforme web moderne de mise en relation entre particuliers et artisans qualifiés. Trouvez facilement des professionnels de confiance près de chez vous.
 
-**URL**: https://lovable.dev/projects/3f32d9f3-f4f2-42bf-94ee-e474e19f409c
+## 🚀 Fonctionnalités
 
-## How can I edit this code?
+- **Recherche d'artisans** : Recherche par métier, localisation et disponibilité
+- **Profils détaillés** : Consultez les profils, avis et réalisations des artisans
+- **Carte interactive** : Visualisez les artisans disponibles sur une carte (Leaflet)
+- **Système d'avis** : Notations et commentaires clients
+- **Chatbot intelligent** : Assistance en temps réel
+- **Espace artisan** : Interface dédiée pour les professionnels
+- **Authentification** : Système de connexion sécurisé via Supabase
 
-There are several ways of editing your application.
+## 🛠️ Technologies
 
-**Use Lovable**
+- **Frontend** : React 18 + TypeScript
+- **Build Tool** : Vite
+- **UI Framework** : shadcn/ui + Tailwind CSS
+- **Routing** : React Router DOM
+- **Backend** : Supabase (Auth + Database)
+- **Carte** : Leaflet + React Leaflet
+- **Formulaires** : React Hook Form + Zod
+- **State Management** : TanStack Query (React Query)
+- **Icons** : Lucide React
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3f32d9f3-f4f2-42bf-94ee-e474e19f409c) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prérequis
 
-**Use your preferred IDE**
+- Node.js 18+ et npm (ou yarn/pnpm)
+- Un compte Supabase (pour la base de données)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Étapes
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Cloner le dépôt
+git clone https://github.com/AkremBelkahla/artisan-connect.git
 
-Follow these steps:
+# Naviguer dans le dossier
+cd artisan-connect
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Installer les dépendances
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Configurer les variables d'environnement
+# Créer un fichier .env à la racine et ajouter vos clés Supabase
+# VITE_SUPABASE_URL=votre_url_supabase
+# VITE_SUPABASE_ANON_KEY=votre_clé_anon
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Lancer le serveur de développement
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+L'application sera accessible sur `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📝 Scripts disponibles
 
-**Use GitHub Codespaces**
+```bash
+# Développement
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Build de production
+npm run build
 
-## What technologies are used for this project?
+# Build de développement
+npm run build:dev
 
-This project is built with:
+# Prévisualisation du build
+npm run preview
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Linting
+npm run lint
+```
 
-## How can I deploy this project?
+## 🗂️ Structure du projet
 
-Simply open [Lovable](https://lovable.dev/projects/3f32d9f3-f4f2-42bf-94ee-e474e19f409c) and click on Share -> Publish.
+```
+artisan-connect/
+├── src/
+│   ├── assets/          # Images et ressources
+│   ├── components/      # Composants réutilisables
+│   │   └── ui/         # Composants shadcn/ui
+│   ├── data/           # Données statiques
+│   ├── hooks/          # Hooks personnalisés
+│   ├── integrations/   # Intégrations externes (Supabase)
+│   ├── lib/            # Utilitaires
+│   ├── pages/          # Pages de l'application
+│   └── main.tsx        # Point d'entrée
+├── public/             # Fichiers statiques
+└── supabase/          # Configuration Supabase
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 🚀 Déploiement
 
-Yes, you can!
+### Netlify / Vercel
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Connectez votre dépôt GitHub
+2. Configurez les variables d'environnement
+3. Build command : `npm run build`
+4. Publish directory : `dist`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Variables d'environnement requises
+
+```env
+VITE_SUPABASE_URL=votre_url_supabase
+VITE_SUPABASE_ANON_KEY=votre_clé_anon
+```
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+
+## 📄 Licence
+
+Ce projet est sous licence MIT.
+
+## 👤 Auteur
+
+**Akrem Belkahla**
+- GitHub: [@AkremBelkahla](https://github.com/AkremBelkahla)
