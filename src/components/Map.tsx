@@ -43,7 +43,7 @@ const Map = () => {
     };
   }, []);
 
-  return <div ref={mapContainer} className="w-full h-[400px] rounded-lg" />;
+  return <div ref={mapContainer} className="w-full h-full rounded-lg" />;
 };
 
 export default Map;

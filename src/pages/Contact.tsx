@@ -98,7 +98,7 @@ const Contact = () => {
           </Card>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-h-[600px]">
           {/* Contact Form */}
           <Card>
             <CardHeader>
@@ -165,12 +165,14 @@ const Contact = () => {
           </Card>
 
           {/* Map */}
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden flex flex-col">
             <CardHeader>
               <CardTitle>Notre localisation</CardTitle>
             </CardHeader>
-            <CardContent className="p-0 h-[400px]">
-              <Map />
+            <CardContent className="flex-1 px-6 pb-6 pt-0">
+              <div className="h-full w-full">
+                <Map />
+              </div>
             </CardContent>
           </Card>
         </div>
