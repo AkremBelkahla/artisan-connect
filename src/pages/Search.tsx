@@ -75,8 +75,8 @@ const Search = () => {
           alt="Trouver un artisan" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/50 flex items-center">
-          <div className="container mx-auto px-4">
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/50 flex items-center justify-center">
+          <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground animate-fade-in">
               Trouvez votre artisan
             </h1>
