@@ -32,7 +32,7 @@ const BackToTop = () => {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="fixed bottom-8 right-8 z-50 rounded-full bg-gradient-primary shadow-lg hover:opacity-90 transition-opacity"
+          className="fixed bottom-8 right-8 z-[999] rounded-full bg-gradient-primary shadow-lg hover:opacity-90 transition-opacity"
           aria-label="Retour en haut"
         >
           <ArrowUp className="w-5 h-5" />

@@ -72,7 +72,7 @@ const Chatbot = () => {
         <Button
           onClick={() => setIsOpen(true)}
           size="icon"
-          className="fixed bottom-8 left-8 z-50 h-14 w-14 rounded-full bg-gradient-primary shadow-lg hover:opacity-90 transition-opacity"
+          className="fixed bottom-8 left-8 z-[999] h-14 w-14 rounded-full bg-gradient-primary shadow-lg hover:opacity-90 transition-opacity"
           aria-label="Ouvrir le chat"
         >
           <MessageSquare className="w-6 h-6" />
@@ -81,7 +81,7 @@ const Chatbot = () => {
 
       {/* Chat window */}
       {isOpen && (
-        <Card className="fixed bottom-8 left-8 z-50 w-96 shadow-xl">
+        <Card className="fixed bottom-8 left-8 z-[999] w-96 shadow-xl">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 bg-gradient-primary text-primary-foreground rounded-t-lg">
             <CardTitle className="text-lg font-semibold">Assistant ArtisanConnect</CardTitle>
             <Button

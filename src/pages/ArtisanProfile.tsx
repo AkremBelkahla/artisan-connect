@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import Chatbot from "@/components/Chatbot";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -295,6 +297,8 @@ const ArtisanProfile = () => {
       </main>
       
       <Footer />
+      <BackToTop />
+      <Chatbot />
     </div>
   );
 };

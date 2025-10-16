@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import Chatbot from "@/components/Chatbot";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -75,20 +77,27 @@ const BecomeArtisan = () => {
       <Navbar />
       
       {/* Hero Header */}
-      <div className="relative h-64 overflow-hidden">
-        <img 
-          src={headerBecomeArtisan} 
-          alt="Devenir artisan" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/50 flex items-center justify-center">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground animate-fade-in">
-              Rejoignez notre communauté
-            </h1>
+      <section className="relative h-[40vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={headerBecomeArtisan} 
+            alt="Devenir artisan" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        </div>
+        <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+          <div className="text-center">
+            <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <Users className="w-10 h-10 text-primary-foreground" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Rejoignez notre communauté</h1>
+            <p className="text-xl text-muted-foreground">
+              Développez votre activité avec ArtisanConnect
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Benefits Section */}
       <section className="py-16">
@@ -261,8 +270,10 @@ const BecomeArtisan = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
+      <BackToTop />
+      <Chatbot />
     </div>
   );
 };

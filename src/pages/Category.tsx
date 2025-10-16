@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import Chatbot from "@/components/Chatbot";
 import ArtisanCard from "@/components/ArtisanCard";
 import { artisans } from "@/data/artisans";
 import { Wrench, Zap, Hammer, Paintbrush } from "lucide-react";
@@ -91,6 +93,8 @@ const Category = () => {
       </main>
 
       <Footer />
+      <BackToTop />
+      <Chatbot />
     </div>
   );
 };
