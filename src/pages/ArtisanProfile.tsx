@@ -246,16 +246,18 @@ const ArtisanProfile = () => {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Sélectionnez une date disponible</label>
-                  <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    disabled={(date) =>
-                      date < new Date() || isDateUnavailable(date)
-                    }
-                    className="pointer-events-auto rounded-md border"
-                    locale={fr}
-                  />
+                  <div className="flex justify-center">
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      disabled={(date) =>
+                        date < new Date() || isDateUnavailable(date)
+                      }
+                      className="pointer-events-auto rounded-md border"
+                      locale={fr}
+                    />
+                  </div>
                   <div className="text-xs text-muted-foreground p-2">
                     <p>Les dates grisées sont indisponibles</p>
                   </div>
