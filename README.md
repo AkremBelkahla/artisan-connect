@@ -1,6 +1,6 @@
 # Artisan Connect
 
-Plateforme web moderne de mise en relation entre particuliers et artisans qualifiés. Trouvez facilement des professionnels de confiance près de chez vous.
+Plateforme web moderne de mise en relation entre particuliers et artisans qualifiés. Trouvez facilement des professionnels de confiance près de chez vous. 
 
 ## 🚀 Fonctionnalités
 
