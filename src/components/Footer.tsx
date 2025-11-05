@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <img src="/logo-artison.svg" alt="ArtisOn" className="w-10 h-10" />
+              <img src="/logo.png" alt="ArtisOn" className="w-10 h-10" />
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 ArtisOn
               </span>

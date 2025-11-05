@@ -121,7 +121,7 @@ const Auth = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 group mb-4">
-            <img src="/logo-artison.svg" alt="ArtisOn" className="w-12 h-12 transition-transform group-hover:scale-105" />
+            <img src="/logo.png" alt="ArtisOn" className="w-12 h-12 transition-transform group-hover:scale-105" />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               ArtisOn
             </span>
