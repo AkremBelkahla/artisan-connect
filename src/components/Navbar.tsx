@@ -46,14 +46,9 @@ const Navbar = () => {
             <span className="sr-only">Toggle theme</span>
           </Button>
           <Link to="/auth">
-            <Button variant="outline" className="hidden md:flex items-center gap-2">
+            <Button className="hidden md:flex items-center gap-2 bg-gradient-primary hover:opacity-90 transition-opacity">
               <User className="w-4 h-4" />
-              Connexion
-            </Button>
-          </Link>
-          <Link to="/auth">
-            <Button className="hidden md:flex bg-gradient-primary hover:opacity-90 transition-opacity">
-              Inscription
+              Mon compte
             </Button>
           </Link>
         </div>
