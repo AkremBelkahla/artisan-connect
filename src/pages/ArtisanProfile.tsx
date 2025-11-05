@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar } from "@/components/ui/calendar";
 import { Star, MapPin, CheckCircle, MessageSquare, Phone, Mail, Award, Clock, Users } from "lucide-react";
 import { artisans } from "@/data/artisans";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { fr } from "date-fns/locale";
 
 const ArtisanProfile = () => {
@@ -20,21 +20,54 @@ const ArtisanProfile = () => {
 
   const artisan = artisans.find((a) => a.id === id) || artisans[0];
 
-  // Simulate unavailable dates (artisan is busy)
-  const unavailableDates = [
-    new Date(2025, 9, 20),
-    new Date(2025, 9, 21),
-    new Date(2025, 9, 27),
-    new Date(2025, 9, 28),
-  ];
+  const {
+    availableDates,
+    busyDates,
+    bookingWindowStart,
+    bookingWindowEnd,
+  } = useMemo(() => {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const totalDays = 30;
+    const upcomingDates = Array.from({ length: totalDays }, (_, index) => {
+      const futureDate = new Date(start);
+      futureDate.setDate(start.getDate() + index);
+      return futureDate;
+    });
 
-  const isDateUnavailable = (date: Date) => {
-    return unavailableDates.some(
-      (unavailableDate) =>
-        date.getDate() === unavailableDate.getDate() &&
-        date.getMonth() === unavailableDate.getMonth() &&
-        date.getFullYear() === unavailableDate.getFullYear()
-    );
+    const busy = upcomingDates.filter((_, index) => {
+      const isWeekend = upcomingDates[index].getDay() === 0 || upcomingDates[index].getDay() === 6;
+      const patternedBusy = (index + 3) % 5 === 0;
+      return isWeekend || patternedBusy;
+    });
+
+    const busyKey = new Set(busy.map((day) => day.getTime()));
+    const available = upcomingDates.filter((day) => !busyKey.has(day.getTime()));
+
+    return {
+      availableDates: available,
+      busyDates: busy,
+      bookingWindowStart: start,
+      bookingWindowEnd: upcomingDates[upcomingDates.length - 1],
+    };
+  }, []);
+
+  const isSameDay = (first: Date, second: Date) =>
+    first.getDate() === second.getDate() &&
+    first.getMonth() === second.getMonth() &&
+    first.getFullYear() === second.getFullYear();
+
+  const isDateBusy = (value: Date) => busyDates.some((busyDate) => isSameDay(busyDate, value));
+
+  const isOutsideBookingWindow = (value: Date) =>
+    value < bookingWindowStart || value > bookingWindowEnd;
+
+  const handleDateSelect = (selectedDate?: Date) => {
+    if (!selectedDate) return;
+    if (isDateBusy(selectedDate) || isOutsideBookingWindow(selectedDate)) {
+      return;
+    }
+    setDate(selectedDate);
   };
 
   const realisations = [
@@ -250,16 +283,32 @@ const ArtisanProfile = () => {
                     <Calendar
                       mode="single"
                       selected={date}
-                      onSelect={setDate}
-                      disabled={(date) =>
-                        date < new Date() || isDateUnavailable(date)
-                      }
+                      onSelect={handleDateSelect}
+                      disabled={(value) => isOutsideBookingWindow(value)}
+                      modifiers={{
+                        available: availableDates,
+                        busy: busyDates,
+                      }}
+                      modifiersClassNames={{
+                        available: "bg-emerald-100 text-emerald-700 font-semibold hover:bg-emerald-200 focus:bg-emerald-200",
+                        busy: "bg-red-100 text-red-600 font-semibold hover:bg-red-200 focus:bg-red-200 cursor-not-allowed",
+                      }}
                       className="pointer-events-auto rounded-md border"
                       locale={fr}
                     />
                   </div>
-                  <div className="text-xs text-muted-foreground p-2">
-                    <p>Les dates grisées sont indisponibles</p>
+                  <div className="text-xs text-muted-foreground p-2 space-y-1">
+                    <p>Les 30 prochains jours sont indiqués ci-dessous :</p>
+                    <div className="flex items-center gap-4">
+                      <span className="flex items-center gap-1">
+                        <span className="inline-block h-3 w-3 rounded-full bg-emerald-500" />
+                        Disponibles
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="inline-block h-3 w-3 rounded-full bg-red-500" />
+                        Indisponibles
+                      </span>
+                    </div>
                   </div>
                 </div>
 
