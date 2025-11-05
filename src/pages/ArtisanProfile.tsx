@@ -290,8 +290,8 @@ const ArtisanProfile = () => {
                         busy: busyDates,
                       }}
                       modifiersClassNames={{
-                        available: "bg-emerald-100 text-emerald-700 font-semibold hover:bg-emerald-200 focus:bg-emerald-200",
-                        busy: "bg-red-100 text-red-600 font-semibold hover:bg-red-200 focus:bg-red-200 cursor-not-allowed",
+                        available: "text-emerald-500 font-semibold hover:text-emerald-600 focus:text-emerald-600",
+                        busy: "text-red-500 font-semibold opacity-70 pointer-events-none",
                       }}
                       className="pointer-events-auto rounded-md border"
                       locale={fr}
