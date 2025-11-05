@@ -110,15 +110,15 @@ const Footer = () => {
               </a>
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              <Link to="/mentions-legales" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Mentions légales
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              </Link>
+              <Link to="/politique-confidentialite" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Politique de confidentialité
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              </Link>
+              <Link to="/cgu" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 CGU
-              </a>
+              </Link>
             </div>
           </div>
         </div>
