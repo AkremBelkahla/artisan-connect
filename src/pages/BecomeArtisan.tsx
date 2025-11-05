@@ -93,7 +93,7 @@ const BecomeArtisan = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Rejoignez notre communauté</h1>
             <p className="text-xl text-muted-foreground">
-              Développez votre activité avec ArtisanConnect
+              Développez votre activité avec ArtisOn
             </p>
           </div>
         </div>
@@ -104,7 +104,7 @@ const BecomeArtisan = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Les avantages d'ArtisanConnect
+              Les avantages d'ArtisOn
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Développez votre activité et trouvez de nouveaux clients en toute simplicité

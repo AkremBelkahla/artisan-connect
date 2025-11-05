@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Hammer, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Heart } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,11 +9,9 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <Hammer className="w-6 h-6 text-primary-foreground" />
-              </div>
+              <img src="/logo-artison.svg" alt="ArtisOn" className="w-10 h-10" />
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                ArtisanConnect
+                ArtisOn
               </span>
             </Link>
             <p className="text-muted-foreground text-sm">
@@ -79,8 +77,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <a href="mailto:contact@artisanconnect.fr" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  contact@artisanconnect.fr
+                <a href="mailto:contact@artison.fr" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  contact@artison.fr
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -103,7 +101,13 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} ArtisanConnect. Tous droits réservés.
+              © {new Date().getFullYear()} ArtisOn. Tous droits réservés.
+            </p>
+            <p className="text-muted-foreground text-sm flex items-center gap-1">
+              Développé avec <Heart className="w-4 h-4 text-red-500 fill-red-500" /> par{" "}
+              <a href="https://infinityweb.tn" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                InfinityWeb.tn
+              </a>
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">

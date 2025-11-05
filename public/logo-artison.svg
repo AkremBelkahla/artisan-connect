@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Triangle gauche -->
+  <path d="M 50 180 L 100 20 L 80 20 L 20 180 Z" fill="#D2691E"/>
+  
+  <!-- Triangle droit avec courbe -->
+  <path d="M 100 20 L 180 180 L 150 180 L 120 120 Q 110 100 130 90 L 180 90 Q 190 90 190 100 L 190 180 L 180 180 L 100 20 Z" fill="#D2691E"/>
+  
+  <!-- Courbe blanche au centre -->
+  <path d="M 110 80 Q 90 100 100 120 Q 110 140 130 130 Q 150 120 140 100 Q 130 80 110 80 Z" fill="white"/>
+</svg>

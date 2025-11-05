@@ -34,7 +34,7 @@ const Map = () => {
     // Add marker for Paris
     const marker = L.marker([48.8566, 2.3522]).addTo(map.current);
     marker.bindPopup(
-      "<div style='font-family: sans-serif;'><h3 style='margin: 0 0 5px 0; font-weight: bold;'>ArtisanConnect</h3><p style='margin: 0;'>123 Avenue des Champs-Élysées<br>75008 Paris</p></div>"
+      "<div style='font-family: sans-serif;'><h3 style='margin: 0 0 5px 0; font-weight: bold;'>ArtisOn</h3><p style='margin: 0;'>123 Avenue des Champs-Élysées<br>75008 Paris</p></div>"
     );
 
     return () => {

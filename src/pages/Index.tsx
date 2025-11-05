@@ -53,7 +53,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Pourquoi choisir ArtisanConnect ?
+              Pourquoi choisir ArtisOn ?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               La plateforme de confiance pour tous vos projets d'artisanat
@@ -171,7 +171,7 @@ const Index = () => {
                     name: "Sophie M.",
                     location: "Marseille",
                     rating: 5,
-                    text: "Excellent suivi et artisans de qualité. Je recommande vivement ArtisanConnect pour tous vos travaux !",
+                    text: "Excellent suivi et artisans de qualité. Je recommande vivement ArtisOn pour tous vos travaux !",
                     avatar: client3
                   },
                   {
@@ -253,8 +253,8 @@ const Index = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="-left-12 hidden md:flex" />
-              <CarouselNext className="-right-12 hidden md:flex" />
+              <CarouselPrevious className="left-2 md:-left-12" />
+              <CarouselNext className="right-2 md:-right-12" />
             </Carousel>
           </div>
         </div>

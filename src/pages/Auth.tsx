@@ -102,7 +102,7 @@ const Auth = () => {
 
       toast({
         title: "Connexion réussie !",
-        description: "Bienvenue sur ArtisanConnect.",
+        description: "Bienvenue sur ArtisOn.",
       });
     } catch (error: any) {
       toast({
@@ -121,11 +121,9 @@ const Auth = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 group mb-4">
-            <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
-              <Hammer className="w-7 h-7 text-primary-foreground" />
-            </div>
+            <img src="/logo-artison.svg" alt="ArtisOn" className="w-12 h-12 transition-transform group-hover:scale-105" />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              ArtisanConnect
+              ArtisOn
             </span>
           </Link>
           <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1>
