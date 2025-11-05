@@ -12,6 +12,9 @@ import BecomeArtisan from "./pages/BecomeArtisan";
 import Auth from "./pages/Auth";
 import Category from "./pages/Category";
 import Contact from "./pages/Contact";
+import MentionsLegales from "./pages/MentionsLegales";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+import ConditionsGeneralesUtilisation from "./pages/ConditionsGeneralesUtilisation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
