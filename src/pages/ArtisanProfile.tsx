@@ -290,10 +290,11 @@ const ArtisanProfile = () => {
                         busy: busyDates,
                       }}
                       modifiersClassNames={{
-                        available: "text-orange-500 font-semibold hover:text-orange-600 focus:text-orange-600",
+                        available: "text-emerald-500 font-semibold hover:text-emerald-600 focus:text-emerald-600",
                         busy: "text-red-500 font-semibold opacity-70 pointer-events-none",
+                        today: "text-white font-semibold"
                       }}
-                      className="pointer-events-auto rounded-md border"
+                      className="pointer-events-auto rounded-md border [&_button.rdp-day_today:not(.rdp-day_selected)]:bg-transparent"
                       locale={fr}
                     />
                   </div>
