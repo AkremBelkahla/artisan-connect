@@ -102,7 +102,27 @@ const Navbar = () => {
             >
               Devenir artisan
             </Link>
-            <div className="pt-2 mt-2 border-t border-border">
+            <div className="pt-2 mt-2 border-t border-border space-y-2">
+              <Button
+                variant="outline"
+                className="w-full flex items-center justify-center gap-2 text-foreground/80 hover:text-orange-500"
+                onClick={() => {
+                  setTheme(theme === "dark" ? "light" : "dark");
+                  setIsMenuOpen(false);
+                }}
+              >
+                {theme === "dark" ? (
+                  <>
+                    <Sun className="h-4 w-4" />
+                    Mode clair
+                  </>
+                ) : (
+                  <>
+                    <Moon className="h-4 w-4" />
+                    Mode sombre
+                  </>
+                )}
+              </Button>
               <Link to="/auth">
                 <Button 
                   className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-600 hover:opacity-90 transition-opacity text-white"
