@@ -1,121 +1,133 @@
-# Artisan Connect
+# ArtisOn - Connect with Local Artisans
 
-Plateforme web moderne de mise en relation entre particuliers et artisans qualifiés. Trouvez facilement des professionnels de confiance près de chez vous. 
+A modern web platform connecting individuals with skilled local artisans. Easily find trusted professionals near you.
 
-## 🚀 Fonctionnalités
+## 🚀 Features
 
-- **Recherche d'artisans** : Recherche par métier, localisation et disponibilité
-- **Profils détaillés** : Consultez les profils, avis et réalisations des artisans
-- **Carte interactive** : Visualisez les artisans disponibles sur une carte (Leaflet)
-- **Système d'avis** : Notations et commentaires clients
-- **Chatbot intelligent** : Assistance en temps réel
-- **Espace artisan** : Interface dédiée pour les professionnels
-- **Authentification** : Système de connexion sécurisé via Supabase
+- **Artisan Search**: Search by trade, location, and availability
+- **Detailed Profiles**: View artisan profiles, reviews, and past work
+- **Interactive Map**: Visualize available artisans on a map (Leaflet)
+- **Review System**: Ratings and customer feedback
+- **Smart Chatbot**: Real-time assistance
+- **Artisan Dashboard**: Dedicated interface for professionals
+- **Authentication**: Secure login system via Supabase
 
 ## 🛠️ Technologies
 
-- **Frontend** : React 18 + TypeScript
-- **Build Tool** : Vite
-- **UI Framework** : shadcn/ui + Tailwind CSS
-- **Routing** : React Router DOM
-- **Backend** : Supabase (Auth + Database)
-- **Carte** : Leaflet + React Leaflet
-- **Formulaires** : React Hook Form + Zod
-- **State Management** : TanStack Query (React Query)
-- **Icons** : Lucide React
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **UI Framework**: shadcn/ui + Tailwind CSS
+- **Routing**: React Router DOM
+- **Backend**: Supabase (Auth + Database)
+- **Maps**: Leaflet + React Leaflet
+- **Forms**: React Hook Form + Zod
+- **State Management**: TanStack Query (React Query)
+- **Icons**: Lucide React
 
 ## 📦 Installation
 
-### Prérequis
+### Prerequisites
 
-- Node.js 18+ et npm (ou yarn/pnpm)
-- Un compte Supabase (pour la base de données)
+- Node.js 18+ and npm (or yarn/pnpm)
+- Supabase account (for database)
 
-### Étapes
+### Setup Steps
 
 ```bash
-# Cloner le dépôt
-git clone https://github.com/AkremBelkahla/artisan-connect.git
+# Clone the repository
+git clone https://github.com/AkremBelkahla/artis-on.git
 
-# Naviguer dans le dossier
-cd artisan-connect
+# Navigate to the project directory
+cd artis-on
 
-# Installer les dépendances
+# Install dependencies
 npm install
 
-# Configurer les variables d'environnement
-# Créer un fichier .env à la racine et ajouter vos clés Supabase
-# VITE_SUPABASE_URL=votre_url_supabase
-# VITE_SUPABASE_ANON_KEY=votre_clé_anon
+# Configure environment variables
+# Create a .env file in the root and add your Supabase credentials
+# VITE_SUPABASE_URL=your_supabase_url
+# VITE_SUPABASE_ANON_KEY=your_anon_key
 
-# Lancer le serveur de développement
+# Start the development server
 npm run dev
 ```
 
-L'application sera accessible sur `http://localhost:5173`
+The application will be available at `http://localhost:5173`
 
-## 📝 Scripts disponibles
+## 📝 Available Scripts
 
 ```bash
-# Développement
+# Development
 npm run dev
 
-# Build de production
+# Production build
 npm run build
 
-# Build de développement
+# Development build
 npm run build:dev
 
-# Prévisualisation du build
+# Preview build
 npm run preview
 
 # Linting
 npm run lint
 ```
 
-## 🗂️ Structure du projet
+## 🗂️ Project Structure
 
 ```
-artisan-connect/
+artis-on/
 ├── src/
-│   ├── assets/          # Images et ressources
-│   ├── components/      # Composants réutilisables
-│   │   └── ui/         # Composants shadcn/ui
-│   ├── data/           # Données statiques
-│   ├── hooks/          # Hooks personnalisés
-│   ├── integrations/   # Intégrations externes (Supabase)
-│   ├── lib/            # Utilitaires
-│   ├── pages/          # Pages de l'application
-│   └── main.tsx        # Point d'entrée
-├── public/             # Fichiers statiques
-└── supabase/          # Configuration Supabase
+│   ├── assets/          # Images and assets
+│   ├── components/      # Reusable components
+│   │   └── ui/         # shadcn/ui components
+│   ├── data/           # Static data
+│   ├── hooks/          # Custom hooks
+│   ├── integrations/   # External integrations (Supabase)
+│   ├── lib/            # Utilities
+│   ├── pages/          # Application pages
+│   └── main.tsx        # Entry point
+├── public/             # Static files
+└── supabase/          # Supabase configuration
 ```
 
-## 🚀 Déploiement
+## 🚀 Deployment
 
 ### Netlify / Vercel
 
-1. Connectez votre dépôt GitHub
-2. Configurez les variables d'environnement
-3. Build command : `npm run build`
-4. Publish directory : `dist`
+1. Connect your GitHub repository
+2. Configure environment variables
+3. Set build command: `npm run build`
+4. Set publish directory: `dist`
 
-### Variables d'environnement requises
+### Required Environment Variables
 
 ```env
-VITE_SUPABASE_URL=votre_url_supabase
-VITE_SUPABASE_ANON_KEY=votre_clé_anon
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
 ```
 
-## 🤝 Contribution
+## 📝 License
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📄 Licence
+## 👥 Contributing
 
-Ce projet est sous licence MIT.
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) to get started.
 
-## 👤 Auteur
+## 📧 Contact
 
-**Akrem Belkahla**
+For any questions or feedback, please contact us at [contact@infinityweb.tn](mailto:contact@infinityweb.tn)
+
+---
+
+Developed with ❤️ by [Infinity Web](https://infinityweb.tn)
+
+## 📝 How to Contribute
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 - GitHub: [@AkremBelkahla](https://github.com/AkremBelkahla)
