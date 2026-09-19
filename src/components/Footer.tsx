@@ -104,7 +104,7 @@ const Footer = () => {
               © {new Date().getFullYear()} ArtisOn. All rights reserved.
             </p>
             <p className="text-stone-500 text-sm flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-primary fill-primary" /> par{" "}
+              Made with <Heart className="w-4 h-4 text-primary fill-primary" /> by{" "}
               <a href="https://infinityweb.tn" target="_blank" rel="noopener noreferrer" className="text-primary-light hover:underline">
                 InfinityWeb.tn
               </a>
