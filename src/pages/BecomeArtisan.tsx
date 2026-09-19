@@ -77,14 +77,14 @@ const BecomeArtisan = () => {
       <Navbar />
       
       {/* Hero Header */}
-      <section className="relative h-[40vh] overflow-hidden">
+      <section className="relative h-[36vh] min-h-[340px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src={headerBecomeArtisan} 
             alt="Devenir artisan" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
         </div>
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">

@@ -2,37 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system "Trust & Authority".
-   Professional blue primary, orange reserved for primary CTAs only.
-   All colors MUST be HSL. */
+/* Design system "Trust & Authority" — warm orange brand.
+   Vibrant orange primary, deeper orange reserved for primary CTAs,
+   flat design (no gradients, subtle shadows). All colors MUST be HSL. */
 
 @layer base {
   :root {
-    --background: 214 100% 98%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 100%;
+    --foreground: 24 10% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 24 10% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 24 10% 12%;
 
-    /* Primary: deep professional blue (#1E40AF) */
-    --primary: 221 83% 53%;
+    /* Primary: vibrant orange (#F97316 family) */
+    --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 60%;
-    --primary-dark: 224 64% 33%;
+    --primary-light: 24 95% 63%;
+    --primary-dark: 24 95% 43%;
 
-    /* Secondary: light blue surface */
-    --secondary: 214 95% 93%;
-    --secondary-foreground: 224 64% 33%;
-    --secondary-light: 214 95% 96%;
+    /* Secondary: light orange surface */
+    --secondary: 30 90% 95%;
+    --secondary-foreground: 24 80% 30%;
+    --secondary-light: 30 90% 97%;
 
     /* Accent: hover/focus surfaces */
-    --accent: 214 95% 93%;
-    --accent-foreground: 224 64% 33%;
+    --accent: 30 90% 94%;
+    --accent-foreground: 24 80% 30%;
 
-    /* CTA: conversion orange (#EA580C) — primary actions only */
+    /* CTA: deeper conversion orange (#EA580C) — primary actions only */
     --cta: 20 91% 48%;
     --cta-foreground: 0 0% 100%;
     --cta-dark: 20 91% 40%;
@@ -41,29 +41,29 @@
     --success: 142 70% 35%;
     --success-foreground: 0 0% 100%;
 
-    --muted: 214 32% 93%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 30 20% 96%;
+    --muted-foreground: 25 10% 45%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 88%;
-    --input: 214 32% 88%;
-    --ring: 221 83% 53%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 24 95% 53%;
 
     --radius: 0.75rem;
 
     /* Flat design: solid fills kept as variables for compatibility */
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(221 83% 53%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(221 83% 53%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 53%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 53%) 100%);
     --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%) 0%, hsl(0 0% 100%) 100%);
 
     /* Shadows: subtle, neutral */
-    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.08), 0 2px 4px -2px hsl(222 47% 11% / 0.08);
-    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.08), 0 4px 6px -4px hsl(222 47% 11% / 0.08);
-    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1), 0 8px 10px -6px hsl(222 47% 11% / 0.1);
-    --shadow-card: 0 4px 20px hsl(221 83% 53% / 0.08);
+    --shadow-sm: 0 1px 2px 0 hsl(24 10% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(24 10% 12% / 0.08), 0 2px 4px -2px hsl(24 10% 12% / 0.08);
+    --shadow-lg: 0 10px 15px -3px hsl(24 10% 12% / 0.08), 0 4px 6px -4px hsl(24 10% 12% / 0.08);
+    --shadow-xl: 0 20px 25px -5px hsl(24 10% 12% / 0.1), 0 8px 10px -6px hsl(24 10% 12% / 0.1);
+    --shadow-card: 0 4px 20px hsl(24 95% 53% / 0.08);
 
     /* Transitions */
     --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -71,47 +71,47 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 24 10% 10%;
+    --foreground: 30 20% 96%;
 
-    --card: 222 47% 14%;
-    --card-foreground: 210 40% 98%;
+    --card: 24 10% 13%;
+    --card-foreground: 30 20% 96%;
 
-    --popover: 222 47% 14%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 24 10% 13%;
+    --popover-foreground: 30 20% 96%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 224 64% 20%;
-    --primary-light: 217 91% 70%;
-    --primary-dark: 221 83% 53%;
+    --primary: 24 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 24 95% 65%;
+    --primary-dark: 24 95% 45%;
 
-    --secondary: 217 33% 20%;
-    --secondary-foreground: 210 40% 96%;
-    --secondary-light: 217 33% 24%;
+    --secondary: 24 20% 20%;
+    --secondary-foreground: 30 60% 85%;
+    --secondary-light: 24 20% 24%;
 
-    --accent: 217 33% 20%;
-    --accent-foreground: 210 40% 96%;
+    --accent: 24 20% 20%;
+    --accent-foreground: 30 60% 85%;
 
-    --cta: 20 91% 48%;
+    --cta: 20 91% 50%;
     --cta-foreground: 0 0% 100%;
-    --cta-dark: 20 91% 40%;
+    --cta-dark: 20 91% 42%;
 
-    --success: 142 70% 45%;
-    --success-foreground: 222 47% 11%;
+    --success: 142 60% 45%;
+    --success-foreground: 24 10% 10%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 24 10% 18%;
+    --muted-foreground: 30 10% 65%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 30 20% 96%;
 
-    --border: 217 33% 22%;
-    --input: 217 33% 22%;
-    --ring: 217 91% 60%;
+    --border: 24 10% 22%;
+    --input: 24 10% 22%;
+    --ring: 24 95% 55%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-card: linear-gradient(to bottom, hsl(222 47% 14%) 0%, hsl(222 47% 14%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(24 95% 55%) 0%, hsl(24 95% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(24 95% 55%) 0%, hsl(24 95% 55%) 100%);
+    --gradient-card: linear-gradient(to bottom, hsl(24 10% 13%) 0%, hsl(24 10% 13%) 100%);
 
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
@@ -132,5 +132,14 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

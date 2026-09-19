@@ -302,11 +302,11 @@ const ArtisanProfile = () => {
                     <p>Les 30 prochains jours sont indiqués ci-dessous :</p>
                     <div className="flex items-center gap-4">
                       <span className="flex items-center gap-1">
-                        <span className="inline-block h-3 w-3 rounded-full bg-emerald-500" />
+                        <span className="inline-block h-3 w-3 rounded-full bg-success" />
                         Disponibles
                       </span>
                       <span className="flex items-center gap-1">
-                        <span className="inline-block h-3 w-3 rounded-full bg-red-500" />
+                        <span className="inline-block h-3 w-3 rounded-full bg-destructive" />
                         Indisponibles
                       </span>
                     </div>

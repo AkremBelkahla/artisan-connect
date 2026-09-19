@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, MapPin } from "lucide-react";
+import { Search, MapPin, BadgeCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import heroSlide1 from "@/assets/hero-slide-1.jpg";
@@ -102,6 +102,14 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl">
+          {/* Trust badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 backdrop-blur-sm px-4 py-1.5 mb-6 shadow-sm">
+            <BadgeCheck className="w-4 h-4 text-success" />
+            <span className="text-sm font-medium text-foreground/80">
+              Plus de 12 000 artisans vérifiés en France
+            </span>
+          </div>
+
           {/* Carousel Text Content */}
           <Carousel
             setApi={setTextApi}
@@ -133,34 +141,37 @@ const HeroSection = () => {
           </Carousel>
 
           {/* Search Bar - Fixed */}
-          <div className="bg-card rounded-2xl border border-border shadow-md p-2 flex flex-col md:flex-row gap-2 mb-8">
-            <div className="flex-1 flex items-center gap-2 px-4 bg-muted rounded-xl h-14">
+          <div className="bg-card rounded-2xl border border-border shadow-lg p-2 flex flex-col md:flex-row md:items-center gap-2 mb-8">
+            <div className="flex-1 flex items-center gap-2 px-4 h-14">
               <Search className="w-5 h-5 text-muted-foreground flex-shrink-0" />
               <Input
                 type="text"
                 placeholder="Quel type d'artisan recherchez-vous ?"
-                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full"
+                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full px-0"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
               />
             </div>
-            
-            <div className="flex-1 flex items-center gap-2 px-4 bg-muted rounded-xl h-14">
+
+            <div className="hidden md:block w-px h-8 bg-border" />
+            <div className="md:hidden h-px bg-border mx-4" />
+
+            <div className="flex-1 flex items-center gap-2 px-4 h-14">
               <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0" />
               <Input
                 type="text"
                 placeholder="Votre ville ou code postal"
-                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full"
+                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full px-0"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
               />
             </div>
-            
-            <Button 
+
+            <Button
               size="lg"
-              className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg px-8 h-14"
+              className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-base font-semibold px-8 h-12 md:h-14 rounded-xl"
               onClick={handleSearch}
             >
               Rechercher
@@ -168,17 +179,17 @@ const HeroSection = () => {
           </div>
 
           {/* Stats - Fixed */}
-          <div className="grid grid-cols-3 gap-6 max-w-2xl">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">12K+</div>
+          <div className="flex items-center divide-x divide-border">
+            <div className="pr-8">
+              <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">12K+</div>
               <div className="text-sm text-muted-foreground">Artisans vérifiés</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">50K+</div>
+            <div className="px-8">
+              <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">50K+</div>
               <div className="text-sm text-muted-foreground">Projets réalisés</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-1">4.8/5</div>
+            <div className="pl-8">
+              <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">4.8/5</div>
               <div className="text-sm text-muted-foreground">Note moyenne</div>
             </div>
           </div>
