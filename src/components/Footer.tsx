@@ -15,7 +15,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-stone-400 text-sm leading-relaxed">
-              La plateforme de confiance pour connecter clients et artisans qualifiés partout en France.
+              The trusted platform connecting homeowners with qualified artisans across France.
             </p>
             <div className="flex gap-3">
               <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-lg bg-stone-800 hover:bg-primary hover:text-white transition-colors flex items-center justify-center">
@@ -35,26 +35,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white font-display">Liens rapides</h3>
+            <h3 className="font-semibold mb-4 text-white font-display">Quick links</h3>
             <ul className="space-y-2.5">
               <li>
                 <Link to="/search" className="text-stone-400 hover:text-primary-light transition-colors text-sm">
-                  Trouver un artisan
+                  Find an artisan
                 </Link>
               </li>
               <li>
                 <Link to="/how-it-works" className="text-stone-400 hover:text-primary-light transition-colors text-sm">
-                  Comment ça marche
+                  How it works
                 </Link>
               </li>
               <li>
                 <Link to="/become-artisan" className="text-stone-400 hover:text-primary-light transition-colors text-sm">
-                  Devenir artisan
+                  Become an artisan
                 </Link>
               </li>
               <li>
                 <Link to="/auth" className="text-stone-400 hover:text-primary-light transition-colors text-sm">
-                  Connexion
+                  Sign in
                 </Link>
               </li>
             </ul>
@@ -62,12 +62,12 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-4 text-white font-display">Catégories</h3>
+            <h3 className="font-semibold mb-4 text-white font-display">Categories</h3>
             <ul className="space-y-2.5">
-              <li><Link to="/category/plomberie" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Plomberie</Link></li>
-              <li><Link to="/category/electricite" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Électricité</Link></li>
-              <li><Link to="/category/menuiserie" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Menuiserie</Link></li>
-              <li><Link to="/category/peinture" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Peinture</Link></li>
+              <li><Link to="/category/plumbing" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Plumbing</Link></li>
+              <li><Link to="/category/electricity" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Electricity</Link></li>
+              <li><Link to="/category/carpentry" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Carpentry</Link></li>
+              <li><Link to="/category/painting" className="text-stone-400 hover:text-primary-light transition-colors text-sm">Painting</Link></li>
             </ul>
           </div>
 
@@ -101,23 +101,23 @@ const Footer = () => {
         <div className="pt-8 border-t border-stone-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-stone-500 text-sm">
-              © {new Date().getFullYear()} ArtisOn. Tous droits réservés.
+              © {new Date().getFullYear()} ArtisOn. All rights reserved.
             </p>
             <p className="text-stone-500 text-sm flex items-center gap-1">
-              Développé avec <Heart className="w-4 h-4 text-primary fill-primary" /> par{" "}
+              Made with <Heart className="w-4 h-4 text-primary fill-primary" /> par{" "}
               <a href="https://infinityweb.tn" target="_blank" rel="noopener noreferrer" className="text-primary-light hover:underline">
                 InfinityWeb.tn
               </a>
             </p>
             <div className="flex gap-6">
               <Link to="/mentions-legales" className="text-stone-400 hover:text-primary-light transition-colors text-sm">
-                Mentions légales
+                Legal notice
               </Link>
               <Link to="/politique-confidentialite" className="text-stone-400 hover:text-primary-light transition-colors text-sm">
-                Politique de confidentialité
+                Privacy policy
               </Link>
               <Link to="/cgu" className="text-stone-400 hover:text-primary-light transition-colors text-sm">
-                CGU
+                Terms
               </Link>
             </div>
           </div>

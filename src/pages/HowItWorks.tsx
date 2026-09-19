@@ -13,46 +13,46 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: Search,
-      title: "1. Recherchez un artisan",
-      description: "Utilisez notre barre de recherche pour trouver l'artisan qu'il vous faut près de chez vous. Filtrez par métier, distance et disponibilité."
+      title: "1. Find an artisan",
+      description: "Use our search bar to find the artisan you need near you. Filter by trade, distance and availability."
     },
     {
       icon: MessageSquare,
-      title: "2. Consultez les profils",
-      description: "Découvrez les portfolios, lisez les avis clients et comparez les tarifs pour faire le meilleur choix."
+      title: "2. Browse profiles",
+      description: "Browse portfolios, read customer reviews and compare rates to make the best choice."
     },
     {
       icon: Calendar,
-      title: "3. Réservez en ligne",
-      description: "Sélectionnez un créneau disponible dans le calendrier de l'artisan et confirmez votre réservation instantanément."
+      title: "3. Book online",
+      description: "Pick an available slot in the artisan's calendar and confirm your booking instantly."
     },
     {
       icon: CheckCircle,
-      title: "4. Travaux réalisés",
-      description: "L'artisan réalise vos travaux. Payez en ligne de manière sécurisée et laissez votre avis après la prestation."
+      title: "4. Job done",
+      description: "The artisan completes your project. Pay online securely and leave a review after the job."
     }
   ];
 
   const advantages = [
     {
       icon: Clock,
-      title: "Gain de temps",
-      description: "Plus besoin de multiplier les appels. Trouvez et réservez en quelques clics."
+      title: "Save time",
+      description: "No more endless phone calls. Find and book in just a few clicks."
     },
     {
       icon: Shield,
-      title: "Transparence totale",
-      description: "Tarifs affichés, avis vérifiés, disponibilités en temps réel."
+      title: "Full transparency",
+      description: "Displayed rates, verified reviews, real-time availability."
     },
     {
       icon: CreditCard,
-      title: "Paiement sécurisé",
-      description: "Votre paiement est protégé jusqu'à la fin des travaux."
+      title: "Secure payment",
+      description: "Your payment is protected until the job is complete."
     },
     {
       icon: Award,
-      title: "Artisans qualifiés",
-      description: "Tous nos artisans sont vérifiés et certifiés."
+      title: "Qualified artisans",
+      description: "All our artisans are verified and certified."
     }
   ];
 
@@ -65,7 +65,7 @@ const HowItWorks = () => {
         <div className="absolute inset-0">
           <img 
             src={headerHowItWorks} 
-            alt="Comment ça marche" 
+            alt="How it works" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
@@ -75,9 +75,9 @@ const HowItWorks = () => {
             <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <MessageSquare className="w-10 h-10 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Comment ça marche ?</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">How does it work?</h1>
             <p className="text-xl text-muted-foreground">
-              Découvrez notre processus simple et efficace
+              Discover our simple and efficient process
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ const HowItWorks = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Trouvez et réservez un artisan en 4 étapes simples
+              Find and book an artisan in 4 simple steps
             </p>
           </div>
           <div className="max-w-4xl mx-auto space-y-8">
@@ -123,10 +123,10 @@ const HowItWorks = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Pourquoi utiliser ArtisOn ?
+              Why use ArtisOn?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Une plateforme pensée pour simplifier vos projets
+              A platform designed to simplify your projects
             </p>
           </div>
 
@@ -153,20 +153,20 @@ const HowItWorks = () => {
       <section className="relative py-20 overflow-hidden">
         <img 
           src={ctaHowItWorks} 
-          alt="Commencer" 
+          alt="Get started" 
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/70"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            Prêt à commencer ?
+            Ready to get started?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Trouvez l'artisan idéal pour votre projet dès maintenant
+            Find the ideal artisan for your project right now
           </p>
           <Link to="/search">
             <Button size="lg" className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg px-8 py-6 h-auto">
-              Rechercher un artisan
+              Find an artisan
             </Button>
           </Link>
         </div>

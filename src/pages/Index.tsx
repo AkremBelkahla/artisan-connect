@@ -24,23 +24,23 @@ const Index = () => {
   const features = [
     {
       icon: Shield,
-      title: "Artisans vérifiés",
-      description: "Tous nos artisans sont vérifiés et certifiés pour votre sécurité"
+      title: "Verified artisans",
+      description: "All our artisans are verified and certified for your safety"
     },
     {
       icon: Star,
-      title: "Avis clients",
-      description: "Consultez les avis authentiques de milliers de clients satisfaits"
+      title: "Customer reviews",
+      description: "Read authentic reviews from thousands of satisfied customers"
     },
     {
       icon: Clock,
-      title: "Réservation rapide",
-      description: "Trouvez et réservez un artisan en quelques clics seulement"
+      title: "Fast booking",
+      description: "Find and book an artisan in just a few clicks"
     },
     {
       icon: CheckCircle,
-      title: "Paiement sécurisé",
-      description: "Payez en ligne en toute sécurité avec nos solutions de paiement"
+      title: "Secure payment",
+      description: "Pay online securely with our payment solutions"
     }
   ];
 
@@ -54,13 +54,13 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <Reveal className="text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-              Pourquoi ArtisOn
+              Why ArtisOn
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-              La plateforme de confiance pour tous vos projets
+              The trusted platform for all your projects
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des artisans vérifiés, des avis authentiques et une réservation en quelques clics
+              Verified artisans, authentic reviews and booking in just a few clicks
             </p>
           </Reveal>
 
@@ -88,23 +88,23 @@ const Index = () => {
           <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 max-w-6xl mx-auto">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-                Catégories
+                Categories
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-balance">
-                Nos catégories d'artisans
+                Our artisan categories
               </h2>
             </div>
             <p className="text-lg text-muted-foreground max-w-md">
-              Des professionnels qualifiés dans tous les domaines
+              Qualified professionals in every trade
             </p>
           </Reveal>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {[
-              { icon: Wrench, name: "Plomberie", count: "2,345", image: categoryPlumbing, slug: "plomberie" },
-              { icon: Zap, name: "Électricité", count: "1,876", image: categoryElectricity, slug: "electricite" },
-              { icon: Hammer, name: "Menuiserie", count: "1,523", image: categoryCarpentry, slug: "menuiserie" },
-              { icon: Paintbrush, name: "Peinture", count: "1,892", image: categoryPainting, slug: "peinture" },
+              { icon: Wrench, name: "Plumbing", count: "2,345", image: categoryPlumbing, slug: "plumbing" },
+              { icon: Zap, name: "Electricity", count: "1,876", image: categoryElectricity, slug: "electricity" },
+              { icon: Hammer, name: "Carpentry", count: "1,523", image: categoryCarpentry, slug: "carpentry" },
+              { icon: Paintbrush, name: "Painting", count: "1,892", image: categoryPainting, slug: "painting" },
             ].map((category, index) => (
               <Reveal key={index} delay={index * 80}>
                 <Link
@@ -140,13 +140,13 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <Reveal className="text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-              Témoignages
+              Testimonials
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-              Ce que disent nos clients
+              What our customers say
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des milliers de clients satisfaits nous font confiance
+              Thousands of satisfied customers trust us
             </p>
           </Reveal>
 
@@ -169,70 +169,70 @@ const Index = () => {
                     name: "Marie L.",
                     location: "Paris",
                     rating: 5,
-                    text: "Service impeccable ! J'ai trouvé un excellent plombier en quelques minutes. Rapide, efficace et professionnel.",
+                    text: "Impeccable service! I found an excellent plumber in minutes. Fast, efficient and professional.",
                     avatar: client1
                   },
                   {
                     name: "Thomas D.",
                     location: "Lyon",
                     rating: 5,
-                    text: "La plateforme est très intuitive. J'ai pu comparer plusieurs artisans et choisir celui qui correspondait le mieux à mes besoins.",
+                    text: "The platform is very intuitive. I was able to compare several artisans and choose the one that best fit my needs.",
                     avatar: client2
                   },
                   {
                     name: "Sophie M.",
                     location: "Marseille",
                     rating: 5,
-                    text: "Excellent suivi et artisans de qualité. Je recommande vivement ArtisOn pour tous vos travaux !",
+                    text: "Excellent follow-up and quality artisans. I highly recommend ArtisOn for all your projects!",
                     avatar: client3
                   },
                   {
                     name: "Julie B.",
                     location: "Bordeaux",
                     rating: 5,
-                    text: "Artisan très compétent trouvé grâce à la plateforme. Le travail a été réalisé dans les délais et avec soin.",
+                    text: "Found a very skilled artisan through the platform. The work was done on time and with care.",
                     avatar: client1
                   },
                   {
                     name: "Pierre M.",
                     location: "Toulouse",
                     rating: 4,
-                    text: "Bonne expérience globale. Le système de notation m'a aidé à faire le bon choix.",
+                    text: "Great overall experience. The rating system helped me make the right choice.",
                     avatar: client2
                   },
                   {
                     name: "Camille R.",
                     location: "Nantes",
                     rating: 5,
-                    text: "Interface simple et artisans de confiance. J'ai trouvé rapidement ce que je cherchais.",
+                    text: "Simple interface and trustworthy artisans. I quickly found what I was looking for.",
                     avatar: client3
                   },
                   {
                     name: "Alexandre P.",
                     location: "Lille",
                     rating: 5,
-                    text: "Super plateforme ! Les avis clients sont vraiment utiles pour faire son choix.",
+                    text: "Great platform! Customer reviews are really helpful for choosing.",
                     avatar: client1
                   },
                   {
                     name: "Emma D.",
                     location: "Strasbourg",
                     rating: 4,
-                    text: "Bon service, délais respectés et artisan professionnel. Je recommande.",
+                    text: "Good service, deadlines met and a professional artisan. I recommend it.",
                     avatar: client2
                   },
                   {
                     name: "Lucas V.",
                     location: "Nice",
                     rating: 5,
-                    text: "Excellente expérience du début à la fin. L'artisan était ponctuel et le travail impeccable.",
+                    text: "Excellent experience from start to finish. The artisan was punctual and the work impeccable.",
                     avatar: client3
                   },
                   {
                     name: "Sarah K.",
                     location: "Rennes",
                     rating: 5,
-                    text: "Très satisfaite ! La recherche est rapide et les profils artisans complets. Parfait !",
+                    text: "Very satisfied! The search is fast and artisan profiles are complete. Perfect!",
                     avatar: client1
                   }
                 ].map((testimonial, index) => (
@@ -286,18 +286,18 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-stone-900/40" />
               <div className="relative z-10">
                 <p className="text-sm font-semibold uppercase tracking-widest text-primary-light mb-3">
-                  Artisans
+                  For artisans
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white text-balance">
-                  Vous êtes artisan ? Développez votre activité
+                  Are you an artisan? Grow your business
                 </h2>
                 <p className="text-lg text-stone-300 mb-8 max-w-2xl mx-auto">
-                  Rejoignez notre communauté d'artisans qualifiés et recevez des demandes de clients près de chez vous
+                  Join our community of qualified artisans and receive job requests from customers near you
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/become-artisan">
                     <Button size="lg" className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg px-8">
-                      Devenir artisan partenaire
+                      Become a partner artisan
                     </Button>
                   </Link>
                 </div>

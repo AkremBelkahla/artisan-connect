@@ -27,40 +27,40 @@ const BecomeArtisan = () => {
   const benefits = [
     {
       icon: TrendingUp,
-      title: "Développez votre activité",
-      description: "Accédez à des milliers de clients potentiels dans votre région"
+      title: "Grow your business",
+      description: "Reach thousands of potential customers in your area"
     },
     {
       icon: Users,
-      title: "Gérez vos rendez-vous",
-      description: "Un calendrier en ligne pour organiser facilement vos interventions"
+      title: "Manage your schedule",
+      description: "An online calendar to easily organize your jobs"
     },
     {
       icon: Shield,
-      title: "Paiements sécurisés",
-      description: "Recevez vos paiements rapidement et en toute sécurité"
+      title: "Secure payments",
+      description: "Receive your payments quickly and securely"
     },
     {
       icon: Zap,
-      title: "Visibilité accrue",
-      description: "Profitez d'un profil professionnel optimisé pour le référencement"
+      title: "Greater visibility",
+      description: "Enjoy a professional profile optimized for search"
     }
   ];
 
   const features = [
-    "Profil artisan personnalisable",
-    "Système de messagerie intégré",
-    "Gestion des avis clients",
-    "Tableau de bord des réservations",
-    "Portfolio de vos réalisations",
-    "Statistiques de performance"
+    "Customizable artisan profile",
+    "Built-in messaging system",
+    "Customer review management",
+    "Booking dashboard",
+    "Portfolio of your work",
+    "Performance statistics"
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Demande envoyée !",
-      description: "Nous reviendrons vers vous dans les 48h.",
+      title: "Application sent!",
+      description: "We will get back to you within 48 hours.",
     });
     setFormData({
       name: "",
@@ -81,7 +81,7 @@ const BecomeArtisan = () => {
         <div className="absolute inset-0">
           <img 
             src={headerBecomeArtisan} 
-            alt="Devenir artisan" 
+            alt="Become an artisan" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
@@ -91,9 +91,9 @@ const BecomeArtisan = () => {
             <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Users className="w-10 h-10 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Rejoignez notre communauté</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Join our community</h1>
             <p className="text-xl text-muted-foreground">
-              Développez votre activité avec ArtisOn
+              Grow your business with ArtisOn
             </p>
           </div>
         </div>
@@ -104,10 +104,10 @@ const BecomeArtisan = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Les avantages d'ArtisOn
+              The ArtisOn benefits
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Développez votre activité et trouvez de nouveaux clients en toute simplicité
+              Grow your business and find new customers with ease
             </p>
           </div>
 
@@ -136,7 +136,7 @@ const BecomeArtisan = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
-              Fonctionnalités incluses
+              Included features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {features.map((feature, index) => (
@@ -162,19 +162,19 @@ const BecomeArtisan = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold mb-3">
-                    Postulez maintenant
+                    Apply now
                   </h2>
                   <p className="text-muted-foreground">
-                    Remplissez le formulaire ci-dessous et nous vous contacterons rapidement
+                    Fill out the form below and we will get back to you shortly
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Nom complet *</Label>
+                    <Label htmlFor="name">Full name *</Label>
                     <Input
                       id="name"
-                      placeholder="Jean Dupont"
+                      placeholder="John Smith"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -194,7 +194,7 @@ const BecomeArtisan = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Téléphone *</Label>
+                    <Label htmlFor="phone">Phone *</Label>
                     <Input
                       id="phone"
                       type="tel"
@@ -206,52 +206,52 @@ const BecomeArtisan = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="specialty">Spécialité *</Label>
+                    <Label htmlFor="specialty">Trade *</Label>
                     <Select 
                       value={formData.specialty}
                       onValueChange={(value) => setFormData({ ...formData, specialty: value })}
                       required
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Sélectionnez votre métier" />
+                        <SelectValue placeholder="Select your trade" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="plombier">Plombier</SelectItem>
-                        <SelectItem value="electricien">Électricien</SelectItem>
-                        <SelectItem value="menuisier">Menuisier</SelectItem>
-                        <SelectItem value="peintre">Peintre</SelectItem>
-                        <SelectItem value="macon">Maçon</SelectItem>
-                        <SelectItem value="couvreur">Couvreur</SelectItem>
-                        <SelectItem value="chauffagiste">Chauffagiste</SelectItem>
-                        <SelectItem value="autre">Autre</SelectItem>
+                        <SelectItem value="plumber">Plumber</SelectItem>
+                        <SelectItem value="electrician">Electrician</SelectItem>
+                        <SelectItem value="joiner">Joiner</SelectItem>
+                        <SelectItem value="painter">Painter</SelectItem>
+                        <SelectItem value="mason">Mason</SelectItem>
+                        <SelectItem value="roofer">Roofer</SelectItem>
+                        <SelectItem value="heating">Heating Engineer</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="experience">Années d'expérience *</Label>
+                    <Label htmlFor="experience">Years of experience *</Label>
                     <Select 
                       value={formData.experience}
                       onValueChange={(value) => setFormData({ ...formData, experience: value })}
                       required
                     >
                       <SelectTrigger>
-                        <SelectValue placeholder="Sélectionnez votre expérience" />
+                        <SelectValue placeholder="Select your experience" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="0-2">Moins de 2 ans</SelectItem>
-                        <SelectItem value="2-5">2 à 5 ans</SelectItem>
-                        <SelectItem value="5-10">5 à 10 ans</SelectItem>
-                        <SelectItem value="10+">Plus de 10 ans</SelectItem>
+                        <SelectItem value="0-2">Less than 2 years</SelectItem>
+                        <SelectItem value="2-5">2 to 5 years</SelectItem>
+                        <SelectItem value="5-10">5 to 10 years</SelectItem>
+                        <SelectItem value="10+">More than 10 years</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message (optionnel)</Label>
+                    <Label htmlFor="message">Message (optional)</Label>
                     <Textarea
                       id="message"
-                      placeholder="Parlez-nous de votre activité..."
+                      placeholder="Tell us about your business..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4}
@@ -262,7 +262,7 @@ const BecomeArtisan = () => {
                     type="submit" 
                     className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg py-6 h-auto"
                   >
-                    Envoyer ma candidature
+                    Submit my application
                   </Button>
                 </form>
               </CardContent>

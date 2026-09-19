@@ -1,203 +1,134 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, MapPin, BadgeCheck } from "lucide-react";
+import { Search, MapPin, BadgeCheck, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import heroSlide1 from "@/assets/hero-slide-1.jpg";
-import heroSlide2 from "@/assets/hero-slide-2.jpg";
-import heroSlide3 from "@/assets/hero-slide-3.jpg";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import type { CarouselApi } from "@/components/ui/carousel";
+import { useState } from "react";
+import heroImage from "@/assets/hero-artisans.jpg";
 
 const HeroSection = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [location, setLocation] = useState("");
-  const [bgApi, setBgApi] = useState<CarouselApi>();
-  const [textApi, setTextApi] = useState<CarouselApi>();
 
   const handleSearch = () => {
     navigate(`/search?q=${searchQuery}&loc=${location}`);
   };
 
-  // Sync carousels
-  useEffect(() => {
-    if (!bgApi || !textApi) return;
-
-    bgApi.on("select", () => {
-      textApi.scrollTo(bgApi.selectedScrollSnap());
-    });
-
-    textApi.on("select", () => {
-      bgApi.scrollTo(textApi.selectedScrollSnap());
-    });
-  }, [bgApi, textApi]);
-
-  // Auto-play effect
-  useEffect(() => {
-    if (!bgApi || !textApi) return;
-
-    const interval = setInterval(() => {
-      bgApi.scrollNext();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [bgApi, textApi]);
-
-  const slides = [
-    {
-      image: heroSlide1,
-      title: "Trouvez l'artisan",
-      titleHighlight: "parfait",
-      subtitle: "près de chez vous",
-      description: "Connectez-vous avec des artisans qualifiés et vérifiés. Réservez en ligne, payez en toute sécurité."
-    },
-    {
-      image: heroSlide2,
-      title: "Des professionnels",
-      titleHighlight: "certifiés",
-      subtitle: "à votre service",
-      description: "Tous nos artisans sont vérifiés et assurés. Bénéficiez d'un service de qualité pour tous vos projets."
-    },
-    {
-      image: heroSlide3,
-      title: "Réservez facilement",
-      titleHighlight: "en ligne",
-      subtitle: "en quelques clics",
-      description: "Comparez les devis, consultez les avis et réservez directement l'artisan qui correspond à vos besoins."
-    }
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Carousel Background */}
-      <Carousel
-        setApi={setBgApi}
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        className="absolute inset-0 z-0"
-      >
-        <CarouselContent>
-          {slides.map((slide, index) => (
-            <CarouselItem key={index}>
-              <div className="relative w-full h-screen">
-                <img
-                  src={slide.image}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
+    <section className="relative overflow-hidden bg-background pt-28 pb-16 lg:pt-36 lg:pb-24">
+      {/* Subtle warm backdrop */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-primary/10 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-40 -left-40 w-[420px] h-[420px] rounded-full bg-primary/5 blur-3xl"
+      />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text column */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 mb-6 shadow-sm">
+              <BadgeCheck className="w-4 h-4 text-success" />
+              <span className="text-sm font-medium text-foreground/80">
+                Over 12,000 verified artisans in France
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-balance">
+              Find the <span className="text-primary">perfect</span> artisan near you
+            </h1>
+
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
+              Connect with qualified, verified artisans. Book online and pay securely.
+            </p>
+
+            {/* Search Bar */}
+            <div className="bg-card rounded-2xl border border-border shadow-lg p-2 flex flex-col md:flex-row md:items-center gap-2 mb-8">
+              <div className="flex-1 flex items-center gap-2 px-4 h-14">
+                <Search className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                <Input
+                  type="text"
+                  placeholder="What kind of artisan are you looking for?"
+                  className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full px-0"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/60" />
               </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 z-10">
-        <div className="max-w-3xl">
-          {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 backdrop-blur-sm px-4 py-1.5 mb-6 shadow-sm">
-            <BadgeCheck className="w-4 h-4 text-success" />
-            <span className="text-sm font-medium text-foreground/80">
-              Plus de 12 000 artisans vérifiés en France
-            </span>
+              <div className="hidden md:block w-px h-8 bg-border" />
+              <div className="md:hidden h-px bg-border mx-4" />
+
+              <div className="flex-1 flex items-center gap-2 px-4 h-14">
+                <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                <Input
+                  type="text"
+                  placeholder="Your city or postal code"
+                  className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full px-0"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                />
+              </div>
+
+              <Button
+                size="lg"
+                className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-base font-semibold px-8 h-12 md:h-14 rounded-xl"
+                onClick={handleSearch}
+              >
+                Search
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="flex items-center divide-x divide-border">
+              <div className="pr-8">
+                <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">12K+</div>
+                <div className="text-sm text-muted-foreground">Verified artisans</div>
+              </div>
+              <div className="px-8">
+                <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">50K+</div>
+                <div className="text-sm text-muted-foreground">Projects completed</div>
+              </div>
+              <div className="pl-8">
+                <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">4.8/5</div>
+                <div className="text-sm text-muted-foreground">Average rating</div>
+              </div>
+            </div>
           </div>
 
-          {/* Carousel Text Content */}
-          <Carousel
-            setApi={setTextApi}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="mb-8"
-          >
-            <CarouselContent>
-              {slides.map((slide, index) => (
-                <CarouselItem key={index}>
-                  <div className="animate-fade-in">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-balance">
-                      {slide.title}
-                      <span className="text-primary">
-                        {" "}{slide.titleHighlight}{" "}
-                      </span>
-                      {slide.subtitle}
-                    </h1>
-                    
-                    <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
-                      {slide.description}
-                    </p>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-
-          {/* Search Bar - Fixed */}
-          <div className="bg-card rounded-2xl border border-border shadow-lg p-2 flex flex-col md:flex-row md:items-center gap-2 mb-8">
-            <div className="flex-1 flex items-center gap-2 px-4 h-14">
-              <Search className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-              <Input
-                type="text"
-                placeholder="Quel type d'artisan recherchez-vous ?"
-                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full px-0"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+          {/* Image column */}
+          <div className="relative hidden lg:block">
+            <div className="rounded-3xl overflow-hidden border border-border shadow-xl">
+              <img
+                src={heroImage}
+                alt="Professional artisan at work"
+                className="w-full h-[560px] object-cover"
               />
             </div>
 
-            <div className="hidden md:block w-px h-8 bg-border" />
-            <div className="md:hidden h-px bg-border mx-4" />
-
-            <div className="flex-1 flex items-center gap-2 px-4 h-14">
-              <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-              <Input
-                type="text"
-                placeholder="Votre ville ou code postal"
-                className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 h-full px-0"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-              />
+            {/* Floating review card */}
+            <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-2xl shadow-lg p-4 flex items-center gap-3">
+              <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center">
+                <Star className="w-5 h-5 text-primary-foreground fill-primary-foreground" />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">4.8/5 average</p>
+                <p className="text-xs text-muted-foreground">Across 50,000+ completed projects</p>
+              </div>
             </div>
 
-            <Button
-              size="lg"
-              className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-base font-semibold px-8 h-12 md:h-14 rounded-xl"
-              onClick={handleSearch}
-            >
-              Rechercher
-            </Button>
-          </div>
-
-          {/* Stats - Fixed */}
-          <div className="flex items-center divide-x divide-border">
-            <div className="pr-8">
-              <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">12K+</div>
-              <div className="text-sm text-muted-foreground">Artisans vérifiés</div>
-            </div>
-            <div className="px-8">
-              <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">50K+</div>
-              <div className="text-sm text-muted-foreground">Projets réalisés</div>
-            </div>
-            <div className="pl-8">
-              <div className="text-3xl md:text-4xl font-bold font-display text-foreground mb-1">4.8/5</div>
-              <div className="text-sm text-muted-foreground">Note moyenne</div>
+            {/* Floating verified chip */}
+            <div className="absolute top-6 -right-3 bg-card border border-border rounded-full shadow-md px-4 py-2 flex items-center gap-2">
+              <BadgeCheck className="w-4 h-4 text-success" />
+              <span className="text-sm font-medium">Certified artisans</span>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };

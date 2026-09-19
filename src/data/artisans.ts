@@ -29,23 +29,23 @@ const lastNames = [
 ];
 
 const specialties = [
-  "Plombier", "Électricien", "Menuisier", "Peintre", "Maçon", "Carreleur", "Couvreur", "Serrurier",
-  "Chauffagiste", "Paysagiste", "Charpentier", "Vitrier", "Parqueteur", "Plâtrier", "Tapissier"
+  "Plumber", "Electrician", "Joiner", "Painter", "Mason", "Tiler", "Roofer", "Locksmith",
+  "Heating Engineer", "Landscaper", "Carpenter", "Glazier", "Flooring Specialist", "Plasterer", "Upholsterer"
 ];
 
 const cities = [
-  "Paris 15ème", "Paris 16ème", "Boulogne-Billancourt", "Issy-les-Moulineaux", "Vanves", "Malakoff",
+  "Paris 15th", "Paris 16th", "Boulogne-Billancourt", "Issy-les-Moulineaux", "Vanves", "Malakoff",
   "Montrouge", "Clamart", "Sèvres", "Meudon", "Neuilly-sur-Seine", "Levallois-Perret", "Courbevoie",
   "Puteaux", "Colombes", "Asnières-sur-Seine", "Clichy", "Saint-Ouen", "Montreuil", "Vincennes"
 ];
 
 const availabilities = [
-  "Disponible aujourd'hui",
-  "Disponible demain",
-  "Disponible cette semaine",
-  "Disponible dans 2 jours",
-  "Disponible dans 3 jours",
-  "Disponible la semaine prochaine"
+  "Available today",
+  "Available tomorrow",
+  "Available this week",
+  "Available in 2 days",
+  "Available in 3 days",
+  "Available next week"
 ];
 
 const generateArtisan = (index: number): Artisan => {
@@ -70,7 +70,7 @@ const generateArtisan = (index: number): Artisan => {
     reviewCount,
     verified,
     avatar: artisanImages[index % artisanImages.length],
-    hourlyRate: `${baseRate}€/h`,
+    hourlyRate: `€${baseRate}/hr`,
     availability: availabilities[index % availabilities.length]
   };
 };

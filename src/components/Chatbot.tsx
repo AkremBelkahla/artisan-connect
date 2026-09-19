@@ -17,7 +17,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis l'assistant ArtisOn. Comment puis-je vous aider aujourd'hui ?",
+      text: "Hello! I'm the ArtisOn assistant. How can I help you today?",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -25,11 +25,11 @@ const Chatbot = () => {
   const [inputValue, setInputValue] = useState("");
 
   const simulatedResponses = [
-    "Je peux vous aider à trouver un artisan qualifié dans votre région.",
-    "Tous nos artisans sont vérifiés et certifiés.",
-    "Vous pouvez consulter les avis clients avant de faire votre choix.",
-    "N'hésitez pas à demander plusieurs devis pour comparer.",
-    "Nos artisans sont disponibles 7j/7 pour les urgences.",
+    "I can help you find a qualified artisan in your area.",
+    "All our artisans are verified and certified.",
+    "You can read customer reviews before making your choice.",
+    "Feel free to request several quotes to compare.",
+    "Our artisans are available 7 days a week for emergencies.",
   ];
 
   const handleSend = () => {
@@ -73,7 +73,7 @@ const Chatbot = () => {
           onClick={() => setIsOpen(true)}
           size="icon"
           className="fixed bottom-24 right-8 z-[1001] h-14 w-14 rounded-full bg-primary shadow-lg hover:bg-primary-dark transition-colors"
-          aria-label="Ouvrir le chat"
+          aria-label="Open chat"
         >
           <MessageSquare className="w-6 h-6" />
         </Button>
@@ -83,7 +83,7 @@ const Chatbot = () => {
       {isOpen && (
         <Card className="fixed bottom-8 right-8 z-[1001] w-96 shadow-xl">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 bg-primary text-primary-foreground rounded-t-lg">
-            <CardTitle className="text-lg font-semibold">Assistant ArtisOn</CardTitle>
+            <CardTitle className="text-lg font-semibold">ArtisOn Assistant</CardTitle>
             <Button
               variant="ghost"
               size="icon"
@@ -110,7 +110,7 @@ const Chatbot = () => {
                     >
                       <p className="text-sm">{message.text}</p>
                       <span className="text-xs opacity-70">
-                        {message.timestamp.toLocaleTimeString("fr-FR", {
+                        {message.timestamp.toLocaleTimeString("en-GB", {
                           hour: "2-digit",
                           minute: "2-digit",
                         })}
@@ -122,7 +122,7 @@ const Chatbot = () => {
             </ScrollArea>
             <div className="flex gap-2 mt-4">
               <Input
-                placeholder="Tapez votre message..."
+                placeholder="Type your message..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}

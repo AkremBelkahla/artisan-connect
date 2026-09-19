@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, MapPin, CheckCircle } from "lucide-react";
+import { Star, MapPin, BadgeCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export interface Artisan {
@@ -24,61 +24,50 @@ interface ArtisanCardProps {
 const ArtisanCard = ({ artisan }: ArtisanCardProps) => {
   return (
     <Link to={`/artisan/${artisan.id}`}>
-      <Card className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 cursor-pointer overflow-hidden bg-card border-border">
-        <CardContent className="p-6">
-          <div className="flex gap-4">
-            {/* Avatar */}
-            <div className="relative">
-              <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-2xl font-bold text-primary-foreground overflow-hidden">
-                {artisan.avatar ? (
-                  <img src={artisan.avatar} alt={artisan.name} className="w-full h-full object-cover" />
-                ) : (
-                  artisan.name.charAt(0)
-                )}
-              </div>
-              {artisan.verified && (
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success rounded-full flex items-center justify-center border-2 border-card">
-                  <CheckCircle className="w-4 h-4 text-success-foreground" />
-                </div>
-              )}
+      <Card className="group overflow-hidden rounded-2xl border-border bg-card hover:shadow-card transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+        {/* Photo header */}
+        <div className="relative h-44 overflow-hidden">
+          <img
+            src={artisan.avatar}
+            alt={artisan.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+          {artisan.verified && (
+            <Badge className="absolute top-3 left-3 bg-success text-success-foreground border-0 gap-1 px-2.5 py-1">
+              <BadgeCheck className="w-3.5 h-3.5" />
+              Verified
+            </Badge>
+          )}
+
+          <Badge className="absolute bottom-3 right-3 bg-card/95 text-card-foreground border-0 font-semibold px-2.5 py-1 backdrop-blur-sm">
+            {artisan.hourlyRate}
+          </Badge>
+        </div>
+
+        <CardContent className="p-5">
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-semibold text-lg font-display group-hover:text-primary transition-colors truncate">
+              {artisan.name}
+            </h3>
+            <div className="flex items-center gap-1 shrink-0">
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+              <span className="font-semibold text-sm">{artisan.rating}</span>
+              <span className="text-xs text-muted-foreground">({artisan.reviewCount})</span>
             </div>
+          </div>
 
-            {/* Content */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <div>
-                  <h3 className="font-semibold text-lg group-hover:text-primary transition-colors truncate">
-                    {artisan.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{artisan.specialty}</p>
-                </div>
-                <Badge variant="secondary" className="shrink-0">
-                  {artisan.hourlyRate}
-                </Badge>
-              </div>
+          <p className="text-sm text-muted-foreground mb-4">{artisan.specialty}</p>
 
-              {/* Rating */}
-              <div className="flex items-center gap-2 mb-3">
-                <div className="flex items-center gap-1">
-                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  <span className="font-semibold">{artisan.rating}</span>
-                </div>
-                <span className="text-sm text-muted-foreground">
-                  ({artisan.reviewCount} avis)
-                </span>
-              </div>
-
-              {/* Location & Availability */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <MapPin className="w-4 h-4" />
-                  <span>{artisan.location} • {artisan.distance}</span>
-                </div>
-                <Badge variant="outline" className="text-xs">
-                  {artisan.availability}
-                </Badge>
-              </div>
+          <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
+            <div className="flex items-center gap-1.5 text-muted-foreground min-w-0">
+              <MapPin className="w-4 h-4 shrink-0" />
+              <span className="truncate">{artisan.location} • {artisan.distance}</span>
             </div>
+            <Badge variant="secondary" className="text-xs font-medium shrink-0">
+              {artisan.availability}
+            </Badge>
           </div>
         </CardContent>
       </Card>

@@ -6,64 +6,64 @@ import Chatbot from "@/components/Chatbot";
 const ConditionsGeneralesUtilisation = () => {
   const sections = [
     {
-      title: "Objet",
+      title: "Purpose",
       content: [
-        "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation du site ArtisOn et des services proposés aux utilisateurs.",
-        "En accédant au site, vous acceptez sans réserve ces CGU."
+        "These Terms of Service govern the use of the ArtisOn website and the services offered to users.",
+        "By accessing the site, you accept these Terms of Service without reservation."
       ]
     },
     {
-      title: "Définitions",
+      title: "Definitions",
       content: [
-        "Utilisateur : toute personne naviguant sur le site ArtisOn.",
-        "Client : utilisateur effectuant une demande de devis ou une réservation.",
-        "Artisan : professionnel inscrit sur la plateforme et proposant ses services."
+        "User: any person browsing the ArtisOn website.",
+        "Customer: a user submitting a quote request or a booking.",
+        "Artisan: a professional registered on the platform offering their services."
       ]
     },
     {
-      title: "Inscription et compte",
+      title: "Registration and account",
       content: [
-        "L'inscription permet d'accéder à un espace personnel pour gérer ses demandes et ses prestations.",
-        "Les informations fournies doivent être exactes et mises à jour.",
-        "ArtisOn se réserve le droit de suspendre un compte en cas de non-respect des présentes CGU."
+        "Registration gives access to a personal space to manage requests and services.",
+        "The information provided must be accurate and kept up to date.",
+        "ArtisOn reserves the right to suspend an account in the event of a breach of these Terms."
       ]
     },
     {
-      title: "Services proposés",
+      title: "Services offered",
       content: [
-        "Mise en relation entre clients et artisans qualifiés.",
-        "Gestion des devis, réservations et avis clients.",
-        "Support et assistance client via la plateforme."
+        "Connecting customers with qualified artisans.",
+        "Management of quotes, bookings and customer reviews.",
+        "Customer support and assistance through the platform."
       ]
     },
     {
-      title: "Engagements des utilisateurs",
+      title: "User commitments",
       content: [
-        "Fournir des informations exactes et respecter les artisans et autres utilisateurs.",
-        "Ne pas utiliser le site à des fins frauduleuses ou illicites.",
-        "Respecter les droits de propriété intellectuelle liés à la plateforme."
+        "Provide accurate information and respect artisans and other users.",
+        "Not use the site for fraudulent or unlawful purposes.",
+        "Respect the intellectual property rights related to the platform."
       ]
     },
     {
-      title: "Responsabilité",
+      title: "Liability",
       content: [
-        "ArtisOn agit en tant qu'intermédiaire et ne peut être tenu responsable de l'exécution des prestations réalisées par les artisans.",
-        "Toute réclamation doit être adressée directement à l'artisan concerné.",
-        "ArtisOn peut suspendre l'accès au site pour des raisons de maintenance ou de sécurité."
+        "ArtisOn acts as an intermediary and cannot be held responsible for the performance of services carried out by artisans.",
+        "Any claim must be addressed directly to the artisan concerned.",
+        "ArtisOn may suspend access to the site for maintenance or security reasons."
       ]
     },
     {
-      title: "Modification des CGU",
+      title: "Changes to the Terms",
       content: [
-        "ArtisOn se réserve le droit de modifier les présentes conditions à tout moment.",
-        "En cas de modification, les utilisateurs seront informés par le biais du site.",
-        "L'utilisation continue du site après modification vaut acceptation des nouvelles CGU."
+        "ArtisOn reserves the right to modify these Terms at any time.",
+        "In the event of a change, users will be informed through the site.",
+        "Continued use of the site after a modification constitutes acceptance of the new Terms."
       ]
     },
     {
       title: "Contact",
       content: [
-        "Pour toute question relative aux CGU, contactez-nous à contact@artison.fr."
+        "For any question relating to these Terms, contact us at contact@artison.fr."
       ]
     }
   ];
@@ -74,9 +74,9 @@ const ConditionsGeneralesUtilisation = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <header className="mb-12 text-center">
-            <h1 className="text-4xl font-bold mb-4">Conditions Générales d'Utilisation</h1>
+            <h1 className="text-4xl font-bold mb-4">Terms of Service</h1>
             <p className="text-muted-foreground">
-              Merci de lire attentivement nos conditions d'utilisation avant d'utiliser ArtisOn.
+              Please read our terms of service carefully before using ArtisOn.
             </p>
           </header>
 

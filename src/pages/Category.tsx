@@ -15,33 +15,33 @@ const Category = () => {
   const { category } = useParams();
 
   const categoryConfig = {
-    plomberie: {
-      title: "Plomberie",
+    plumbing: {
+      title: "Plumbing",
       icon: Wrench,
       image: categoryPlumbing,
-      specialty: "Plombier",
+      specialty: "Plumber",
     },
-    electricite: {
-      title: "Électricité",
+    electricity: {
+      title: "Electricity",
       icon: Zap,
       image: categoryElectricity,
-      specialty: "Électricien",
+      specialty: "Electrician",
     },
-    menuiserie: {
-      title: "Menuiserie",
+    carpentry: {
+      title: "Carpentry",
       icon: Hammer,
       image: categoryCarpentry,
-      specialty: "Menuisier",
+      specialty: "Joiner",
     },
-    peinture: {
-      title: "Peinture",
+    painting: {
+      title: "Painting",
       icon: Paintbrush,
       image: categoryPainting,
-      specialty: "Peintre",
+      specialty: "Painter",
     },
   };
 
-  const config = categoryConfig[category as keyof typeof categoryConfig] || categoryConfig.plomberie;
+  const config = categoryConfig[category as keyof typeof categoryConfig] || categoryConfig.plumbing;
   const Icon = config.icon;
 
   const filteredArtisans = artisans.filter(
@@ -69,7 +69,7 @@ const Category = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{config.title}</h1>
             <p className="text-xl text-muted-foreground">
-              {filteredArtisans.length} artisans disponibles
+              {filteredArtisans.length} artisans available
             </p>
           </div>
         </div>
@@ -86,7 +86,7 @@ const Category = () => {
         {filteredArtisans.length === 0 && (
           <div className="text-center py-12">
             <p className="text-xl text-muted-foreground">
-              Aucun artisan trouvé dans cette catégorie
+              No artisans found in this category
             </p>
           </div>
         )}

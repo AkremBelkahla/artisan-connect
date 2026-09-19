@@ -8,55 +8,55 @@ const PolitiqueConfidentialite = () => {
     {
       title: "Introduction",
       content: [
-        "La présente politique de confidentialité décrit comment ArtisOn collecte, utilise et protège vos données personnelles lorsque vous utilisez notre plateforme.",
-        "En utilisant ArtisOn, vous acceptez les pratiques décrites dans ce document."
+        "This privacy policy describes how ArtisOn collects, uses and protects your personal data when you use our platform.",
+        "By using ArtisOn, you accept the practices described in this document."
       ]
     },
     {
-      title: "Données collectées",
+      title: "Data we collect",
       content: [
-        "Informations fournies lors de l'inscription (nom, prénom, adresse email, téléphone).",
-        "Données liées à l'utilisation du service (demandes de devis, messages échangés, évaluations).",
-        "Données techniques collectées automatiquement (adresse IP, navigateur, cookies)."
+        "Information provided when signing up (name, email address, phone number).",
+        "Data related to your use of the service (quote requests, messages, reviews).",
+        "Technical data collected automatically (IP address, browser, cookies)."
       ]
     },
     {
-      title: "Utilisation des données",
+      title: "How we use your data",
       content: [
-        "Fournir et améliorer nos services.",
-        "Assurer la sécurité des transactions et de la plateforme.",
-        "Communiquer avec vous concernant les services proposés et vos demandes."
+        "To provide and improve our services.",
+        "To ensure the security of transactions and of the platform.",
+        "To communicate with you about our services and your requests."
       ]
     },
     {
-      title: "Partage des données",
+      title: "Data sharing",
       content: [
-        "Vos données peuvent être partagées avec des artisans partenaires dans le cadre d'une demande de devis.",
-        "Nous ne vendons ni ne louons vos données personnelles à des tiers commerciaux.",
-        "Certaines informations peuvent être communiquées pour respecter une obligation légale."
+        "Your data may be shared with partner artisans as part of a quote request.",
+        "We never sell or rent your personal data to commercial third parties.",
+        "Some information may be disclosed to comply with a legal obligation."
       ]
     },
     {
-      title: "Sécurité des données",
+      title: "Data security",
       content: [
-        "Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé.",
-        "Cependant, aucune transmission de données sur Internet n'est totalement sécurisée."
+        "We implement technical and organizational measures to protect your data against unauthorized access.",
+        "However, no data transmission over the Internet is completely secure."
       ]
     },
     {
-      title: "Durée de conservation",
+      title: "Retention period",
       content: [
-        "Vos données personnelles sont conservées aussi longtemps que nécessaire pour vous fournir nos services.",
-        "Vous pouvez demander leur suppression conformément à la réglementation en vigueur."
+        "Your personal data is kept for as long as necessary to provide our services.",
+        "You may request its deletion in accordance with applicable regulations."
       ]
     },
     {
-      title: "Vos droits",
+      title: "Your rights",
       content: [
-        "Accès, rectification, suppression de vos données.",
-        "Opposition ou limitation du traitement.",
-        "Portabilité des données.",
-        "Pour exercer vos droits, contactez-nous à contact@artison.fr."
+        "Access, rectification and deletion of your data.",
+        "Objection to or restriction of processing.",
+        "Data portability.",
+        "To exercise your rights, contact us at contact@artison.fr."
       ]
     }
   ];
@@ -67,9 +67,9 @@ const PolitiqueConfidentialite = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <header className="mb-12 text-center">
-            <h1 className="text-4xl font-bold mb-4">Politique de confidentialité</h1>
+            <h1 className="text-4xl font-bold mb-4">Privacy policy</h1>
             <p className="text-muted-foreground">
-              Découvrez comment ArtisOn collecte, utilise et protège vos données personnelles.
+              Learn how ArtisOn collects, uses and protects your personal data.
             </p>
           </header>
 

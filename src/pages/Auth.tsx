@@ -70,14 +70,14 @@ const Auth = () => {
       if (error) throw error;
 
       toast({
-        title: "Inscription réussie !",
-        description: "Vous pouvez maintenant vous connecter.",
+        title: "Sign-up successful!",
+        description: "You can now sign in.",
       });
-    } catch (error: any) {
+    } catch (error) {
       toast({
         variant: "destructive",
-        title: "Erreur d'inscription",
-        description: error.message,
+        title: "Sign-up error",
+        description: error instanceof Error ? error.message : "An unexpected error occurred",
       });
     } finally {
       setLoading(false);
@@ -101,14 +101,14 @@ const Auth = () => {
       if (error) throw error;
 
       toast({
-        title: "Connexion réussie !",
-        description: "Bienvenue sur ArtisOn.",
+        title: "Signed in!",
+        description: "Welcome to ArtisOn.",
       });
-    } catch (error: any) {
+    } catch (error) {
       toast({
         variant: "destructive",
-        title: "Erreur de connexion",
-        description: error.message,
+        title: "Sign-in error",
+        description: error instanceof Error ? error.message : "An unexpected error occurred",
       });
     } finally {
       setLoading(false);
@@ -126,23 +126,23 @@ const Auth = () => {
               ArtisOn
             </span>
           </Link>
-          <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1>
-          <p className="text-muted-foreground">Connectez-vous pour accéder à votre espace</p>
+          <h1 className="text-3xl font-bold mb-2">Welcome!</h1>
+          <p className="text-muted-foreground">Sign in to access your account</p>
         </div>
 
         {/* Auth Card */}
         <Card className="shadow-xl border-border/50">
           <CardHeader>
-            <CardTitle className="text-center">Authentification</CardTitle>
+            <CardTitle className="text-center">Authentication</CardTitle>
             <CardDescription className="text-center">
-              Connectez-vous ou créez un compte
+              Sign in or create an account
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="signin" className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-6">
-                <TabsTrigger value="signin">Connexion</TabsTrigger>
-                <TabsTrigger value="signup">Inscription</TabsTrigger>
+                <TabsTrigger value="signin">Sign in</TabsTrigger>
+                <TabsTrigger value="signup">Sign up</TabsTrigger>
               </TabsList>
 
               {/* Sign In Tab */}
@@ -156,7 +156,7 @@ const Auth = () => {
                         id="signin-email"
                         name="signin-email"
                         type="email"
-                        placeholder="votre@email.com"
+                        placeholder="you@email.com"
                         className="pl-10"
                         required
                       />
@@ -164,7 +164,7 @@ const Auth = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signin-password">Mot de passe</Label>
+                    <Label htmlFor="signin-password">Password</Label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                       <Input
@@ -183,12 +183,12 @@ const Auth = () => {
                     className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors"
                     disabled={loading}
                   >
-                    {loading ? "Connexion..." : "Se connecter"}
+                    {loading ? "Signing in..." : "Sign in"}
                   </Button>
 
                   <p className="text-center text-sm text-muted-foreground">
                     <a href="#" className="text-primary hover:underline">
-                      Mot de passe oublié ?
+                      Forgot password?
                     </a>
                   </p>
                 </form>
@@ -198,14 +198,14 @@ const Auth = () => {
               <TabsContent value="signup">
                 <form onSubmit={handleSignUp} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="signup-name">Nom complet</Label>
+                    <Label htmlFor="signup-name">Full name</Label>
                     <div className="relative">
                       <UserIcon className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                       <Input
                         id="signup-name"
                         name="signup-name"
                         type="text"
-                        placeholder="Jean Dupont"
+                        placeholder="John Smith"
                         className="pl-10"
                         required
                       />
@@ -220,7 +220,7 @@ const Auth = () => {
                         id="signup-email"
                         name="signup-email"
                         type="email"
-                        placeholder="votre@email.com"
+                        placeholder="you@email.com"
                         className="pl-10"
                         required
                       />
@@ -228,7 +228,7 @@ const Auth = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-password">Mot de passe</Label>
+                    <Label htmlFor="signup-password">Password</Label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                       <Input
@@ -242,7 +242,7 @@ const Auth = () => {
                       />
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      Minimum 6 caractères
+                      Minimum 6 characters
                     </p>
                   </div>
 
@@ -251,13 +251,13 @@ const Auth = () => {
                     className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors"
                     disabled={loading}
                   >
-                    {loading ? "Inscription..." : "S'inscrire"}
+                    {loading ? "Signing up..." : "Sign up"}
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    En vous inscrivant, vous acceptez nos{" "}
+                    By signing up, you agree to our{" "}
                     <a href="#" className="text-primary hover:underline">
-                      Conditions d'utilisation
+                      Terms of Service
                     </a>
                   </p>
                 </form>
@@ -268,7 +268,7 @@ const Auth = () => {
 
         <p className="text-center text-sm text-muted-foreground mt-6">
           <Link to="/" className="text-primary hover:underline">
-            ← Retour à l'accueil
+            ← Back to home
           </Link>
         </p>
       </div>

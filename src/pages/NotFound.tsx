@@ -13,13 +13,13 @@ const NotFound = () => {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="text-center">
         <p className="text-7xl font-bold font-display text-primary mb-4">404</p>
-        <h1 className="mb-2 text-2xl font-semibold">Page introuvable</h1>
+        <h1 className="mb-2 text-2xl font-semibold">Page not found</h1>
         <p className="mb-8 text-muted-foreground">
-          La page que vous recherchez n'existe pas ou a été déplacée.
+          The page you are looking for does not exist or has been moved.
         </p>
         <Link to="/">
           <Button className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors">
-            Retour à l'accueil
+            Back to home
           </Button>
         </Link>
       </div>

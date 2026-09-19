@@ -12,7 +12,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Star, MapPin, CheckCircle, MessageSquare, Phone, Mail, Award, Clock, Users } from "lucide-react";
 import { artisans } from "@/data/artisans";
 import { useMemo, useState } from "react";
-import { fr } from "date-fns/locale";
+import { enGB } from "date-fns/locale";
 
 const ArtisanProfile = () => {
   const { id } = useParams();
@@ -71,9 +71,9 @@ const ArtisanProfile = () => {
   };
 
   const realisations = [
-    { id: 1, title: "Rénovation salle de bain", description: "Rénovation complète avec douche italienne et carrelage moderne", image: artisan.avatar },
-    { id: 2, title: "Installation chaudière", description: "Installation d'une chaudière à condensation avec thermostat connecté", image: artisan.avatar },
-    { id: 3, title: "Dépannage urgence", description: "Réparation d'une fuite majeure en moins de 2h", image: artisan.avatar },
+    { id: 1, title: "Bathroom renovation", description: "Full renovation with walk-in shower and modern tiling", image: artisan.avatar },
+    { id: 2, title: "Boiler installation", description: "Condensing boiler installation with smart thermostat", image: artisan.avatar },
+    { id: 3, title: "Emergency repair", description: "Major leak repaired in under 2 hours", image: artisan.avatar },
   ];
 
   const reviews = [
@@ -81,22 +81,22 @@ const ArtisanProfile = () => {
       id: 1,
       author: "Marie L.",
       rating: 5,
-      date: "Il y a 2 jours",
-      comment: "Excellent travail ! " + artisan.name.split(' ')[0] + " est très professionnel et ponctuel. A résolu mon problème rapidement.",
+      date: "2 days ago",
+      comment: "Excellent work! " + artisan.name.split(' ')[0] + " is very professional and punctual. Solved my problem quickly.",
     },
     {
       id: 2,
       author: "Thomas B.",
       rating: 5,
-      date: "Il y a 1 semaine",
-      comment: "Je recommande vivement. Travail impeccable. Très bon rapport qualité/prix.",
+      date: "1 week ago",
+      comment: "Highly recommend. Impeccable work. Great value for money.",
     },
     {
       id: 3,
       author: "Sophie M.",
       rating: 4,
-      date: "Il y a 2 semaines",
-      comment: "Bon travail dans l'ensemble. Quelques petits détails à peaufiner mais globalement satisfait.",
+      date: "2 weeks ago",
+      comment: "Good work overall. A few small details to polish but generally satisfied.",
     },
   ];
 
@@ -145,7 +145,7 @@ const ArtisanProfile = () => {
                           <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
                           <span className="font-semibold text-lg">{artisan.rating}</span>
                         </div>
-                        <span className="text-muted-foreground">({artisan.reviewCount} avis)</span>
+                        <span className="text-muted-foreground">({artisan.reviewCount} reviews)</span>
                       </div>
                       <div className="flex items-center gap-1 text-muted-foreground">
                         <MapPin className="w-4 h-4" />
@@ -154,7 +154,7 @@ const ArtisanProfile = () => {
                       {artisan.verified && (
                         <Badge variant="outline" className="flex items-center gap-1">
                           <CheckCircle className="w-3 h-3" />
-                          Vérifié
+                          Verified
                         </Badge>
                       )}
                     </div>
@@ -173,41 +173,41 @@ const ArtisanProfile = () => {
             {/* Tabs */}
             <Tabs defaultValue="about" className="w-full">
               <TabsList className="w-full justify-start">
-                <TabsTrigger value="about">À propos</TabsTrigger>
-                <TabsTrigger value="reviews">Avis ({artisan.reviewCount})</TabsTrigger>
-                <TabsTrigger value="portfolio">Réalisations</TabsTrigger>
+                <TabsTrigger value="about">About</TabsTrigger>
+                <TabsTrigger value="reviews">Reviews ({artisan.reviewCount})</TabsTrigger>
+                <TabsTrigger value="portfolio">Projects</TabsTrigger>
               </TabsList>
 
               <TabsContent value="about" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Description</CardTitle>
+                    <CardTitle>About</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <p className="text-muted-foreground leading-relaxed">
-                      {artisan.specialty} professionnel avec une grande expérience. Passionné par mon métier, je m'engage à fournir des services de haute qualité à tous mes clients. Mon approche allie expertise technique et écoute client pour garantir votre satisfaction totale. Interventions rapides, travail soigné et respect des délais garantis.
+                      Professional {artisan.specialty} with extensive experience. Passionate about my trade, I am committed to providing high-quality services to all my clients. My approach combines technical expertise and attentive listening to guarantee your complete satisfaction. Fast call-outs, careful workmanship and deadlines always met.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-4">
                       <div className="flex items-start gap-3 p-4 bg-muted/50 rounded-lg">
                         <Award className="w-5 h-5 text-primary mt-0.5" />
                         <div>
-                          <p className="font-semibold text-sm">Note</p>
+                          <p className="font-semibold text-sm">Rating</p>
                           <p className="text-xs text-muted-foreground">{artisan.rating}/5</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 p-4 bg-muted/50 rounded-lg">
                         <Clock className="w-5 h-5 text-primary mt-0.5" />
                         <div>
-                          <p className="font-semibold text-sm">Disponibilité</p>
+                          <p className="font-semibold text-sm">Availability</p>
                           <p className="text-xs text-muted-foreground">{artisan.availability}</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 p-4 bg-muted/50 rounded-lg">
                         <Users className="w-5 h-5 text-primary mt-0.5" />
                         <div>
-                          <p className="font-semibold text-sm">Avis clients</p>
-                          <p className="text-xs text-muted-foreground">{artisan.reviewCount} avis</p>
+                          <p className="font-semibold text-sm">Customer reviews</p>
+                          <p className="text-xs text-muted-foreground">{artisan.reviewCount} reviews</p>
                         </div>
                       </div>
                     </div>
@@ -221,9 +221,9 @@ const ArtisanProfile = () => {
                     <div className="flex items-center gap-2 mb-1">
                       <Star className="w-6 h-6 fill-amber-400 text-amber-400" />
                       <span className="text-2xl font-bold">{artisan.rating}</span>
-                      <span className="text-muted-foreground">sur 5</span>
+                      <span className="text-muted-foreground">out of 5</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">Basé sur {artisan.reviewCount} avis</p>
+                    <p className="text-sm text-muted-foreground">Based on {artisan.reviewCount} reviews</p>
                   </div>
                 </div>
                 <div className="space-y-4">
@@ -274,11 +274,11 @@ const ArtisanProfile = () => {
           <div className="space-y-6">
             <Card className="sticky top-24 shadow-card">
               <CardHeader>
-                <CardTitle>Réserver</CardTitle>
+                <CardTitle>Book now</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Sélectionnez une date disponible</label>
+                  <label className="text-sm font-medium">Select an available date</label>
                   <div className="flex justify-center">
                     <Calendar
                       mode="single"
@@ -295,51 +295,51 @@ const ArtisanProfile = () => {
                         today: "text-white font-semibold"
                       }}
                       className="pointer-events-auto rounded-md border [&_button.rdp-day_today:not(.rdp-day_selected)]:bg-transparent"
-                      locale={fr}
+                      locale={enGB}
                     />
                   </div>
                   <div className="text-xs text-muted-foreground p-2 space-y-1">
-                    <p>Les 30 prochains jours sont indiqués ci-dessous :</p>
+                    <p>The next 30 days are shown below:</p>
                     <div className="flex items-center gap-4">
                       <span className="flex items-center gap-1">
                         <span className="inline-block h-3 w-3 rounded-full bg-success" />
-                        Disponibles
+                        Available
                       </span>
                       <span className="flex items-center gap-1">
                         <span className="inline-block h-3 w-3 rounded-full bg-destructive" />
-                        Indisponibles
+                        Unavailable
                       </span>
                     </div>
                   </div>
                 </div>
 
                 <Button className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors" size="lg">
-                  Demander un devis
+                  Request a quote
                 </Button>
 
                 <div className="pt-4 border-t space-y-3">
-                  <p className="text-sm font-medium">Ou contactez directement</p>
+                  <p className="text-sm font-medium">Or contact directly</p>
                   
                   <Button variant="outline" className="w-full justify-start">
                     <Phone className="w-4 h-4 mr-2" />
-                    Appeler
+                    Call
                   </Button>
                   
                   <Button variant="outline" className="w-full justify-start">
                     <MessageSquare className="w-4 h-4 mr-2" />
-                    Envoyer un message
+                    Send a message
                   </Button>
                   
                   <Button variant="outline" className="w-full justify-start">
                     <Mail className="w-4 h-4 mr-2" />
-                    Envoyer un email
+                    Send an email
                   </Button>
                 </div>
 
                 <div className="pt-4 border-t">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-success" />
-                    <span>Réponse sous 24h en moyenne</span>
+                    <span>Average response within 24h</span>
                   </div>
                 </div>
               </CardContent>

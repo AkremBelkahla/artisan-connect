@@ -25,8 +25,8 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message envoyé !",
-      description: "Nous vous répondrons dans les plus brefs délais.",
+      title: "Message sent!",
+      description: "We will get back to you as soon as possible.",
     });
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
@@ -40,7 +40,7 @@ const Contact = () => {
         <div className="absolute inset-0">
           <img 
             src={headerContact} 
-            alt="Contactez-nous" 
+            alt="Contact us" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
@@ -50,9 +50,9 @@ const Contact = () => {
             <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Mail className="w-10 h-10 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Contactez-nous</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact us</h1>
             <p className="text-xl text-muted-foreground">
-              Notre équipe est là pour vous accompagner
+              Our team is here to help you
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const Contact = () => {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
                 <MapPin className="w-6 h-6 text-primary-foreground" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Adresse</h3>
+              <h3 className="font-semibold text-lg mb-2">Address</h3>
               <p className="text-muted-foreground">
                 123 Avenue des Champs-Élysées<br />
                 75008 Paris, France
@@ -79,10 +79,10 @@ const Contact = () => {
               <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
                 <Phone className="w-6 h-6 text-primary-foreground" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Téléphone</h3>
+              <h3 className="font-semibold text-lg mb-2">Phone</h3>
               <p className="text-muted-foreground">
                 +33 1 23 45 67 89<br />
-                Lun - Ven : 9h - 18h
+                Mon - Fri: 9am - 6pm
               </p>
             </CardContent>
           </Card>
@@ -105,15 +105,15 @@ const Contact = () => {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle>Envoyez-nous un message</CardTitle>
+              <CardTitle>Send us a message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Nom complet</label>
+                  <label className="text-sm font-medium mb-2 block">Full name</label>
                   <Input
                     required
-                    placeholder="Votre nom"
+                    placeholder="Your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
@@ -124,14 +124,14 @@ const Contact = () => {
                   <Input
                     required
                     type="email"
-                    placeholder="votre.email@exemple.fr"
+                    placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Téléphone</label>
+                  <label className="text-sm font-medium mb-2 block">Phone</label>
                   <Input
                     placeholder="+33 6 12 34 56 78"
                     value={formData.phone}
@@ -140,10 +140,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Sujet</label>
+                  <label className="text-sm font-medium mb-2 block">Subject</label>
                   <Input
                     required
-                    placeholder="Sujet de votre message"
+                    placeholder="Subject of your message"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   />
@@ -153,7 +153,7 @@ const Contact = () => {
                   <label className="text-sm font-medium mb-2 block">Message</label>
                   <Textarea
                     required
-                    placeholder="Votre message..."
+                    placeholder="Your message..."
                     rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -161,7 +161,7 @@ const Contact = () => {
                 </div>
 
                 <Button type="submit" className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors">
-                  Envoyer le message
+                  Send message
                 </Button>
               </form>
             </CardContent>
@@ -170,7 +170,7 @@ const Contact = () => {
           {/* Map */}
           <Card className="overflow-hidden flex flex-col">
             <CardHeader>
-              <CardTitle>Notre localisation</CardTitle>
+              <CardTitle>Our location</CardTitle>
             </CardHeader>
             <CardContent className="flex-1 px-6 pb-6 pt-0">
               <div className="h-full w-full">

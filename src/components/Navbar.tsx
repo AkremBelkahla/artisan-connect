@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { to: "/search", label: "Trouver un artisan" },
-  { to: "/how-it-works", label: "Comment ça marche" },
+  { to: "/search", label: "Find an artisan" },
+  { to: "/how-it-works", label: "How it works" },
   { to: "/contact", label: "Contact" },
-  { to: "/become-artisan", label: "Devenir artisan" },
+  { to: "/become-artisan", label: "Become an artisan" },
 ];
 
 const Navbar = () => {
@@ -69,7 +69,7 @@ const Navbar = () => {
             size="icon"
             className="md:hidden text-foreground/80 hover:text-primary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
@@ -88,7 +88,7 @@ const Navbar = () => {
           <Link to="/auth">
             <Button className="hidden md:flex items-center gap-2 bg-cta hover:bg-cta-dark text-cta-foreground transition-colors">
               <User className="w-4 h-4" />
-              Mon compte
+              My account
             </Button>
           </Link>
         </div>
@@ -124,19 +124,19 @@ const Navbar = () => {
                 {theme === "dark" ? (
                   <>
                     <Sun className="h-4 w-4" />
-                    Mode clair
+                    Light mode
                   </>
                 ) : (
                   <>
                     <Moon className="h-4 w-4" />
-                    Mode sombre
+                    Dark mode
                   </>
                 )}
               </Button>
               <Link to="/auth">
                 <Button className="w-full flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-cta-foreground transition-colors">
                   <User className="w-4 h-4" />
-                  Mon compte
+                  My account
                 </Button>
               </Link>
             </div>

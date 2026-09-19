@@ -75,7 +75,7 @@ const Search = () => {
         <div className="absolute inset-0">
           <img 
             src={headerSearch} 
-            alt="Trouver un artisan" 
+            alt="Find an artisan" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
@@ -85,9 +85,9 @@ const Search = () => {
             <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <SearchIcon className="w-10 h-10 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Trouvez votre artisan</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Find your artisan</h1>
             <p className="text-xl text-muted-foreground">
-              Recherchez parmi nos artisans qualifiés
+              Search among our qualified artisans
             </p>
           </div>
         </div>
@@ -102,7 +102,7 @@ const Search = () => {
               <div className="flex-1">
                 <Input
                   type="text"
-                  placeholder="Métier (plombier, électricien...)"
+                  placeholder="Trade (plumber, electrician...)"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="h-12"
@@ -111,7 +111,7 @@ const Search = () => {
               <div className="flex-1">
                 <Input
                   type="text"
-                  placeholder="Ville ou code postal"
+                  placeholder="City or postal code"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   className="h-12"
@@ -129,7 +129,7 @@ const Search = () => {
               className="lg:w-auto"
             >
               <SlidersHorizontal className="w-5 h-5 mr-2" />
-              Filtres
+              Filters
             </Button>
           </div>
 
@@ -138,23 +138,23 @@ const Search = () => {
             <div className="bg-card border border-border rounded-xl p-6 mb-6 animate-slide-up">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Trier par</label>
+                  <label className="text-sm font-medium mb-2 block">Sort by</label>
                   <Select value={sortBy} onValueChange={setSortBy}>
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="rating">Mieux notés</SelectItem>
-                      <SelectItem value="distance">Plus proches</SelectItem>
-                      <SelectItem value="price-low">Prix croissant</SelectItem>
-                      <SelectItem value="price-high">Prix décroissant</SelectItem>
+                      <SelectItem value="rating">Top rated</SelectItem>
+                      <SelectItem value="distance">Closest</SelectItem>
+                      <SelectItem value="price-low">Price: low to high</SelectItem>
+                      <SelectItem value="price-high">Price: high to low</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div>
                   <label className="text-sm font-medium mb-2 block">
-                    Distance maximale: {maxDistance[0]} km
+                    Max distance: {maxDistance[0]} km
                   </label>
                   <Slider
                     value={maxDistance}
@@ -167,16 +167,16 @@ const Search = () => {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Disponibilité</label>
+                  <label className="text-sm font-medium mb-2 block">Availability</label>
                   <Select>
                     <SelectTrigger>
-                      <SelectValue placeholder="Toutes" />
+                      <SelectValue placeholder="All" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">Toutes</SelectItem>
-                      <SelectItem value="today">Aujourd'hui</SelectItem>
-                      <SelectItem value="week">Cette semaine</SelectItem>
-                      <SelectItem value="month">Ce mois-ci</SelectItem>
+                      <SelectItem value="all">All</SelectItem>
+                      <SelectItem value="today">Today</SelectItem>
+                      <SelectItem value="week">This week</SelectItem>
+                      <SelectItem value="month">This month</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -186,8 +186,8 @@ const Search = () => {
 
           {/* Results Count */}
           <p className="text-muted-foreground">
-            <span className="font-semibold text-foreground">{sortedArtisans.length} artisans</span> trouvés
-            {location && ` près de ${location}`}
+            <span className="font-semibold text-foreground">{sortedArtisans.length} artisans</span> found
+            {location && ` near ${location}`}
           </p>
         </div>
 
