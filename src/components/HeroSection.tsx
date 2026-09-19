@@ -92,7 +92,7 @@ const HeroSection = () => {
                   alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/60" />
               </div>
             </CarouselItem>
           ))}
@@ -115,9 +115,9 @@ const HeroSection = () => {
               {slides.map((slide, index) => (
                 <CarouselItem key={index}>
                   <div className="animate-fade-in">
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-balance">
                       {slide.title}
-                      <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                      <span className="text-primary">
                         {" "}{slide.titleHighlight}{" "}
                       </span>
                       {slide.subtitle}
@@ -133,7 +133,7 @@ const HeroSection = () => {
           </Carousel>
 
           {/* Search Bar - Fixed */}
-          <div className="bg-card rounded-2xl shadow-xl p-2 flex flex-col md:flex-row gap-2 mb-8">
+          <div className="bg-card rounded-2xl border border-border shadow-md p-2 flex flex-col md:flex-row gap-2 mb-8">
             <div className="flex-1 flex items-center gap-2 px-4 bg-muted rounded-xl h-14">
               <Search className="w-5 h-5 text-muted-foreground flex-shrink-0" />
               <Input
@@ -160,7 +160,7 @@ const HeroSection = () => {
             
             <Button 
               size="lg"
-              className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8 h-14"
+              className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg px-8 h-14"
               onClick={handleSearch}
             >
               Rechercher

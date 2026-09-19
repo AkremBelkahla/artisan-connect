@@ -17,23 +17,23 @@ const Navbar = () => {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <img src="/logo.png" alt="ArtisOn" className="w-10 h-10 transition-transform group-hover:scale-105" />
-          <span className="text-xl font-bold bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
+          <span className="text-xl font-bold font-display text-primary">
             ArtisOn
           </span>
         </Link>
 
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/search" className="text-foreground/80 hover:text-orange-500 transition-colors">
+          <Link to="/search" className="text-foreground/80 hover:text-primary transition-colors">
             Trouver un artisan
           </Link>
-          <Link to="/how-it-works" className="text-foreground/80 hover:text-orange-500 transition-colors">
+          <Link to="/how-it-works" className="text-foreground/80 hover:text-primary transition-colors">
             Comment ça marche
           </Link>
-          <Link to="/contact" className="text-foreground/80 hover:text-orange-500 transition-colors">
+          <Link to="/contact" className="text-foreground/80 hover:text-primary transition-colors">
             Contact
           </Link>
-          <Link to="/become-artisan" className="text-foreground/80 hover:text-orange-500 transition-colors">
+          <Link to="/become-artisan" className="text-foreground/80 hover:text-primary transition-colors">
             Devenir artisan
           </Link>
         </div>
@@ -43,7 +43,7 @@ const Navbar = () => {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="md:hidden text-foreground/80 hover:text-orange-500"
+            className="md:hidden text-foreground/80 hover:text-primary"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
@@ -62,7 +62,7 @@ const Navbar = () => {
           </Button>
           
           <Link to="/auth">
-            <Button className="hidden md:flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-600 hover:opacity-90 transition-opacity text-white">
+            <Button className="hidden md:flex items-center gap-2 bg-cta hover:bg-cta-dark text-cta-foreground transition-colors">
               <User className="w-4 h-4" />
               Mon compte
             </Button>
@@ -76,28 +76,28 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             <Link 
               to="/search" 
-              className="py-2 px-4 text-foreground/80 hover:text-orange-500 transition-colors"
+              className="py-2 px-4 text-foreground/80 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Trouver un artisan
             </Link>
             <Link 
               to="/how-it-works" 
-              className="py-2 px-4 text-foreground/80 hover:text-orange-500 transition-colors"
+              className="py-2 px-4 text-foreground/80 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Comment ça marche
             </Link>
             <Link 
               to="/contact" 
-              className="py-2 px-4 text-foreground/80 hover:text-orange-500 transition-colors"
+              className="py-2 px-4 text-foreground/80 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Link 
               to="/become-artisan" 
-              className="py-2 px-4 text-foreground/80 hover:text-orange-500 transition-colors"
+              className="py-2 px-4 text-foreground/80 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Devenir artisan
@@ -105,7 +105,7 @@ const Navbar = () => {
             <div className="pt-2 mt-2 border-t border-border space-y-2">
               <Button
                 variant="outline"
-                className="w-full flex items-center justify-center gap-2 text-foreground/80 hover:text-orange-500"
+                className="w-full flex items-center justify-center gap-2 text-foreground/80 hover:text-primary"
                 onClick={() => {
                   setTheme(theme === "dark" ? "light" : "dark");
                   setIsMenuOpen(false);
@@ -125,7 +125,7 @@ const Navbar = () => {
               </Button>
               <Link to="/auth">
                 <Button 
-                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-600 hover:opacity-90 transition-opacity text-white"
+                  className="w-full flex items-center justify-center gap-2 bg-cta hover:bg-cta-dark text-cta-foreground transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <User className="w-4 h-4" />

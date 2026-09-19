@@ -72,7 +72,7 @@ const Chatbot = () => {
         <Button
           onClick={() => setIsOpen(true)}
           size="icon"
-          className="fixed bottom-24 right-8 z-[1001] h-14 w-14 rounded-full bg-gradient-primary shadow-lg hover:opacity-90 transition-opacity"
+          className="fixed bottom-24 right-8 z-[1001] h-14 w-14 rounded-full bg-primary shadow-lg hover:bg-primary-dark transition-colors"
           aria-label="Ouvrir le chat"
         >
           <MessageSquare className="w-6 h-6" />
@@ -82,7 +82,7 @@ const Chatbot = () => {
       {/* Chat window */}
       {isOpen && (
         <Card className="fixed bottom-8 right-8 z-[1001] w-96 shadow-xl">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 bg-gradient-primary text-primary-foreground rounded-t-lg">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 bg-primary text-primary-foreground rounded-t-lg">
             <CardTitle className="text-lg font-semibold">Assistant ArtisOn</CardTitle>
             <Button
               variant="ghost"
@@ -104,7 +104,7 @@ const Chatbot = () => {
                     <div
                       className={`max-w-[80%] rounded-lg px-4 py-2 ${
                         message.sender === "user"
-                          ? "bg-gradient-primary text-primary-foreground"
+                          ? "bg-primary text-primary-foreground"
                           : "bg-muted text-foreground"
                       }`}
                     >
@@ -131,7 +131,7 @@ const Chatbot = () => {
               <Button
                 onClick={handleSend}
                 size="icon"
-                className="bg-gradient-primary hover:opacity-90"
+                className="bg-primary hover:bg-primary-dark"
               >
                 <Send className="h-4 w-4" />
               </Button>

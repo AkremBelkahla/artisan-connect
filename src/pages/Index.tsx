@@ -64,10 +64,10 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50"
+                className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-card border-border"
               >
                 <CardContent className="pt-8 pb-6 px-6">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <feature.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
@@ -101,7 +101,7 @@ const Index = () => {
               <Link
                 key={index}
                 to={`/category/${category.slug}`}
-                className="group relative overflow-hidden bg-gradient-card border border-border/50 rounded-xl hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+                className="group relative overflow-hidden bg-card border border-border rounded-xl hover:shadow-card transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="absolute inset-0">
                   <img 
@@ -112,7 +112,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-background/20" />
                 </div>
                 <div className="relative p-6">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
                     <category.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-center mb-1">{category.name}</h3>
@@ -226,7 +226,7 @@ const Index = () => {
                 ].map((testimonial, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
-                      <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-shadow h-full">
+                      <Card className="bg-card border-border hover:shadow-card transition-shadow h-full">
                         <CardContent className="pt-6">
                           <Quote className="w-8 h-8 text-primary mb-4" />
                           <p className="text-muted-foreground mb-4 italic min-h-[80px]">
@@ -234,7 +234,7 @@ const Index = () => {
                           </p>
                           <div className="flex items-center gap-2 mb-2">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                             ))}
                           </div>
                           <div className="flex items-center gap-3 mt-4">
@@ -277,7 +277,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/become-artisan">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8">
+              <Button size="lg" className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg px-8">
                 Devenir artisan partenaire
               </Button>
             </Link>

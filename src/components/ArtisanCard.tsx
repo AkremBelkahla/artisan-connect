@@ -24,12 +24,12 @@ interface ArtisanCardProps {
 const ArtisanCard = ({ artisan }: ArtisanCardProps) => {
   return (
     <Link to={`/artisan/${artisan.id}`}>
-      <Card className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 cursor-pointer overflow-hidden bg-gradient-card border-border/50">
+      <Card className="group hover:shadow-card transition-all duration-300 hover:-translate-y-1 cursor-pointer overflow-hidden bg-card border-border">
         <CardContent className="p-6">
           <div className="flex gap-4">
             {/* Avatar */}
             <div className="relative">
-              <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-2xl font-bold text-primary-foreground overflow-hidden">
+              <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-2xl font-bold text-primary-foreground overflow-hidden">
                 {artisan.avatar ? (
                   <img src={artisan.avatar} alt={artisan.name} className="w-full h-full object-cover" />
                 ) : (
@@ -37,8 +37,8 @@ const ArtisanCard = ({ artisan }: ArtisanCardProps) => {
                 )}
               </div>
               {artisan.verified && (
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-accent rounded-full flex items-center justify-center border-2 border-card">
-                  <CheckCircle className="w-4 h-4 text-accent-foreground" />
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success rounded-full flex items-center justify-center border-2 border-card">
+                  <CheckCircle className="w-4 h-4 text-success-foreground" />
                 </div>
               )}
             </div>
@@ -60,7 +60,7 @@ const ArtisanCard = ({ artisan }: ArtisanCardProps) => {
               {/* Rating */}
               <div className="flex items-center gap-2 mb-3">
                 <div className="flex items-center gap-1">
-                  <Star className="w-4 h-4 fill-secondary text-secondary" />
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
                   <span className="font-semibold">{artisan.rating}</span>
                 </div>
                 <span className="text-sm text-muted-foreground">
