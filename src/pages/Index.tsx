@@ -4,10 +4,13 @@ import HeroSection from "@/components/HeroSection";
 import BackToTop from "@/components/BackToTop";
 import Chatbot from "@/components/Chatbot";
 import Reveal from "@/components/Reveal";
+import ArtisanCard from "@/components/ArtisanCard";
+import { artisans } from "@/data/artisans";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Star, MapPin, CheckCircle, Search, Shield, Clock, Award, Users, ThumbsUp, Zap, Wrench, Hammer, Paintbrush, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Star, MapPin, CheckCircle, Search, Shield, Clock, Award, Users, ThumbsUp, Zap, Wrench, Hammer, Paintbrush, Quote, ChevronLeft, ChevronRight, CalendarCheck, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
@@ -44,6 +47,49 @@ const Index = () => {
     }
   ];
 
+  const steps = [
+    {
+      icon: Search,
+      title: "Describe your project",
+      description: "Tell us what you need and where you are. It takes less than a minute."
+    },
+    {
+      icon: Users,
+      title: "Compare artisans",
+      description: "Browse verified profiles, read real reviews and compare quotes side by side."
+    },
+    {
+      icon: CalendarCheck,
+      title: "Book with confidence",
+      description: "Pick a time slot, pay securely online and track your project to completion."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "How are artisans verified?",
+      answer: "Every artisan goes through an identity check, insurance verification and qualification review before joining ArtisOn. Profiles showing the Verified badge have completed this process."
+    },
+    {
+      question: "Is it free to request a quote?",
+      answer: "Yes. Browsing profiles and requesting quotes is completely free for customers. You only pay the artisan once you accept a quote and book a job."
+    },
+    {
+      question: "How does payment work?",
+      answer: "Payments are made securely through the platform. Your money is held safely and only released to the artisan once the job is marked as complete."
+    },
+    {
+      question: "What if I'm not satisfied with the work?",
+      answer: "Contact our support team within 48 hours of job completion. We'll mediate with the artisan and help you find a resolution, including a rework or partial refund when applicable."
+    },
+    {
+      question: "Which areas do you cover?",
+      answer: "ArtisOn currently operates across Paris and the surrounding region, with new cities being added regularly. Enter your postal code in the search bar to see available artisans near you."
+    }
+  ];
+
+  const featuredArtisans = artisans.filter((a) => a.verified).slice(0, 4);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -79,6 +125,53 @@ const Index = () => {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <Reveal className="text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+              How it works
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
+              Your project done in 3 simple steps
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              From request to completion, everything happens on one platform
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto relative">
+            {/* Connecting line (desktop) */}
+            <div className="hidden md:block absolute top-10 left-[20%] right-[20%] h-px bg-border" aria-hidden="true" />
+            {steps.map((step, index) => (
+              <Reveal key={index} delay={index * 120} className="relative">
+                <div className="text-center">
+                  <div className="relative inline-flex mb-6">
+                    <div className="w-20 h-20 bg-secondary rounded-2xl flex items-center justify-center">
+                      <step.icon className="w-9 h-9 text-primary" />
+                    </div>
+                    <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-cta text-cta-foreground text-sm font-bold flex items-center justify-center">
+                      {index + 1}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">
+                    {step.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="text-center mt-12">
+            <Link to="/how-it-works" className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all">
+              Learn more about the process
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -129,6 +222,36 @@ const Index = () => {
                     </p>
                   </div>
                 </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Artisans Section */}
+      <section className="py-24 bg-muted/40">
+        <div className="container mx-auto px-4">
+          <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+                Featured artisans
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-balance">
+                Meet our top-rated pros
+              </h2>
+            </div>
+            <Link to="/search">
+              <Button variant="outline" className="gap-2">
+                View all artisans
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredArtisans.map((artisan, index) => (
+              <Reveal key={artisan.id} delay={index * 80}>
+                <ArtisanCard artisan={artisan} />
               </Reveal>
             ))}
           </div>
@@ -268,6 +391,47 @@ const Index = () => {
               <CarouselPrevious className="left-2 md:-left-12" />
               <CarouselNext className="right-2 md:-right-12" />
             </Carousel>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <Reveal className="text-center mb-14">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+                FAQ
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
+                Frequently asked questions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Everything you need to know before booking an artisan
+              </p>
+            </Reveal>
+
+            <Reveal>
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="border-border">
+                    <AccordionTrigger className="text-left font-medium hover:text-primary">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </Reveal>
+
+            <Reveal className="text-center mt-10">
+              <p className="text-muted-foreground mb-4">Still have questions?</p>
+              <Link to="/contact">
+                <Button variant="outline">Contact us</Button>
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
