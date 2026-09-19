@@ -109,20 +109,20 @@ const ArtisanProfile = () => {
           {/* Left Column - Profile Info */}
           <div className="lg:col-span-2 space-y-6">
             {/* Header Card */}
-            <Card className="bg-gradient-card border-border/50">
+            <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Avatar */}
                   <div className="relative">
                     <Avatar className="w-24 h-24">
                       <AvatarImage src={artisan.avatar} alt={artisan.name} />
-                      <AvatarFallback className="text-3xl bg-gradient-primary text-primary-foreground">
+                      <AvatarFallback className="text-3xl bg-primary text-primary-foreground">
                         {artisan.name.charAt(0)}
                       </AvatarFallback>
                     </Avatar>
                     {artisan.verified && (
-                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center border-2 border-card">
-                        <CheckCircle className="w-5 h-5 text-accent-foreground" />
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-success rounded-full flex items-center justify-center border-2 border-card">
+                        <CheckCircle className="w-5 h-5 text-success-foreground" />
                       </div>
                     )}
                   </div>
@@ -142,7 +142,7 @@ const ArtisanProfile = () => {
                     <div className="flex flex-wrap items-center gap-4 mb-4">
                       <div className="flex items-center gap-2">
                         <div className="flex items-center gap-1">
-                          <Star className="w-5 h-5 fill-secondary text-secondary" />
+                          <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
                           <span className="font-semibold text-lg">{artisan.rating}</span>
                         </div>
                         <span className="text-muted-foreground">({artisan.reviewCount} avis)</span>
@@ -219,7 +219,7 @@ const ArtisanProfile = () => {
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <Star className="w-6 h-6 fill-secondary text-secondary" />
+                      <Star className="w-6 h-6 fill-amber-400 text-amber-400" />
                       <span className="text-2xl font-bold">{artisan.rating}</span>
                       <span className="text-muted-foreground">sur 5</span>
                     </div>
@@ -237,7 +237,7 @@ const ArtisanProfile = () => {
                           </div>
                           <div className="flex items-center gap-1">
                             {Array.from({ length: review.rating }).map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                              <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                             ))}
                           </div>
                         </div>
@@ -290,8 +290,8 @@ const ArtisanProfile = () => {
                         busy: busyDates,
                       }}
                       modifiersClassNames={{
-                        available: "text-emerald-500 font-semibold hover:text-emerald-600 focus:text-emerald-600",
-                        busy: "text-red-500 font-semibold opacity-70 pointer-events-none",
+                        available: "text-success font-semibold",
+                        busy: "text-destructive font-semibold opacity-70 pointer-events-none",
                         today: "text-white font-semibold"
                       }}
                       className="pointer-events-auto rounded-md border [&_button.rdp-day_today:not(.rdp-day_selected)]:bg-transparent"
@@ -313,7 +313,7 @@ const ArtisanProfile = () => {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-primary hover:opacity-90 transition-opacity" size="lg">
+                <Button className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors" size="lg">
                   Demander un devis
                 </Button>
 
@@ -338,7 +338,7 @@ const ArtisanProfile = () => {
 
                 <div className="pt-4 border-t">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-accent" />
+                    <CheckCircle className="w-4 h-4 text-success" />
                     <span>Réponse sous 24h en moyenne</span>
                   </div>
                 </div>

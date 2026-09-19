@@ -72,7 +72,7 @@ const HowItWorks = () => {
         </div>
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
-            <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <MessageSquare className="w-10 h-10 text-primary-foreground" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Comment ça marche ?</h1>
@@ -95,12 +95,12 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <Card 
                 key={index}
-                className="relative overflow-hidden hover:shadow-card transition-all duration-300 hover:-translate-y-1 animate-fade-in bg-gradient-card border-border/50"
+                className="relative overflow-hidden hover:shadow-card transition-all duration-300 hover:-translate-y-1 animate-fade-in bg-card border-border"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-8">
                   <div className="flex flex-col md:flex-row gap-6 items-start">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0">
                       <step.icon className="w-8 h-8 text-primary-foreground" />
                     </div>
                     <div className="flex-1">
@@ -134,10 +134,10 @@ const HowItWorks = () => {
             {advantages.map((advantage, index) => (
               <Card 
                 key={index}
-                className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50"
+                className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-card border-border"
               >
                 <CardContent className="pt-8 pb-6 px-6">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                     <advantage.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{advantage.title}</h3>
@@ -165,7 +165,7 @@ const HowItWorks = () => {
             Trouvez l'artisan idéal pour votre projet dès maintenant
           </p>
           <Link to="/search">
-            <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity text-lg px-8 py-6 h-auto">
+            <Button size="lg" className="bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg px-8 py-6 h-auto">
               Rechercher un artisan
             </Button>
           </Link>

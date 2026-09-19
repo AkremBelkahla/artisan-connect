@@ -47,7 +47,7 @@ const Contact = () => {
         </div>
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
-            <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Mail className="w-10 h-10 text-primary-foreground" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contactez-nous</h1>
@@ -61,9 +61,9 @@ const Contact = () => {
       <main className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Contact Info Cards */}
-          <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-shadow">
+          <Card className="bg-card border-border hover:shadow-card transition-shadow">
             <CardContent className="pt-6">
-              <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
                 <MapPin className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Adresse</h3>
@@ -74,9 +74,9 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-shadow">
+          <Card className="bg-card border-border hover:shadow-card transition-shadow">
             <CardContent className="pt-6">
-              <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
                 <Phone className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Téléphone</h3>
@@ -87,9 +87,9 @@ const Contact = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-border/50 hover:shadow-card transition-shadow">
+          <Card className="bg-card border-border hover:shadow-card transition-shadow">
             <CardContent className="pt-6">
-              <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
                 <Mail className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Email</h3>
@@ -160,7 +160,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-gradient-primary">
+                <Button type="submit" className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors">
                   Envoyer le message
                 </Button>
               </form>

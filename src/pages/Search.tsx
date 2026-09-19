@@ -82,7 +82,7 @@ const Search = () => {
         </div>
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
-            <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <SearchIcon className="w-10 h-10 text-primary-foreground" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Trouvez votre artisan</h1>
@@ -117,7 +117,7 @@ const Search = () => {
                   className="h-12"
                 />
               </div>
-              <Button size="lg" className="bg-gradient-primary">
+              <Button size="lg" className="bg-cta hover:bg-cta-dark text-cta-foreground">
                 <SearchIcon className="w-5 h-5" />
               </Button>
             </div>
@@ -217,7 +217,7 @@ const Search = () => {
                   variant={currentPage === page ? "default" : "outline"}
                   size="icon"
                   onClick={() => handlePageChange(page)}
-                  className={currentPage === page ? "bg-gradient-primary" : ""}
+                  className={currentPage === page ? "bg-primary" : ""}
                 >
                   {page}
                 </Button>

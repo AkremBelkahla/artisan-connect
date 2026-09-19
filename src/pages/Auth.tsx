@@ -122,7 +122,7 @@ const Auth = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 group mb-4">
             <img src="/logo.png" alt="ArtisOn" className="w-12 h-12 transition-transform group-hover:scale-105" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="text-2xl font-bold font-display text-primary">
               ArtisOn
             </span>
           </Link>
@@ -180,7 +180,7 @@ const Auth = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-primary hover:opacity-90"
+                    className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors"
                     disabled={loading}
                   >
                     {loading ? "Connexion..." : "Se connecter"}
@@ -248,7 +248,7 @@ const Auth = () => {
 
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-primary hover:opacity-90"
+                    className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors"
                     disabled={loading}
                   >
                     {loading ? "Inscription..." : "S'inscrire"}

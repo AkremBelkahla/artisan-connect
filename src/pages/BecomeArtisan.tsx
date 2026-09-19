@@ -88,7 +88,7 @@ const BecomeArtisan = () => {
         </div>
         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
           <div className="text-center">
-            <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Users className="w-10 h-10 text-primary-foreground" />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Rejoignez notre communauté</h1>
@@ -115,11 +115,11 @@ const BecomeArtisan = () => {
             {benefits.map((benefit, index) => (
               <Card 
                 key={index}
-                className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50 animate-fade-in"
+                className="text-center hover:shadow-card transition-all duration-300 hover:-translate-y-1 bg-card border-border animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="pt-8 pb-6 px-6">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <benefit.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
@@ -158,7 +158,7 @@ const BecomeArtisan = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <Card className="bg-gradient-card border-border/50 shadow-card">
+            <Card className="bg-card border-border shadow-card">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold mb-3">
@@ -260,7 +260,7 @@ const BecomeArtisan = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-primary hover:opacity-90 transition-opacity text-lg py-6 h-auto"
+                    className="w-full bg-cta hover:bg-cta-dark text-cta-foreground transition-colors text-lg py-6 h-auto"
                   >
                     Envoyer ma candidature
                   </Button>
